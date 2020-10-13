@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavBar } from '../../components/NavBar'
+import { NavBar } from '../../components/NavBar/index.js'
+import { Footer } from '../../components/Footer/index.js'
 
 export const About = props => {
   return (
