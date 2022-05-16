@@ -18,7 +18,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^12",
+      "version": "^14",
       "type": "build"
     },
     {
@@ -44,11 +44,37 @@
       "type": "build"
     },
     {
+      "name": "@chakra-ui/react",
+      "type": "runtime"
+    },
+    {
+      "name": "@emotion/react",
+      "version": "^11",
+      "type": "runtime"
+    },
+    {
+      "name": "@emotion/styled",
+      "version": "^11",
+      "type": "runtime"
+    },
+    {
+      "name": "framer-motion",
+      "type": "runtime"
+    },
+    {
       "name": "react",
       "type": "runtime"
     },
     {
       "name": "react-dom",
+      "type": "runtime"
+    },
+    {
+      "name": "react-markdown",
+      "type": "runtime"
+    },
+    {
+      "name": "react-router-dom",
       "type": "runtime"
     },
     {
