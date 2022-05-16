@@ -3,6 +3,7 @@ import { NavBar } from '../../components/NavBar'
 import { BLOGS } from './entries';
 
 export * from './Page';
+export * from './entries';
 
 export const Blog = (_props: any) => {
   return (
