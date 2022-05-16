@@ -1,16 +1,19 @@
 h1 {
-  font-size: 30px !important;
+  font-size: 32px !important;
   font-weight: bold !important;
+  padding: 12px 0 !important;
 }
 
 h2 {
-  font-size: 20px !important;
+  font-size: 24px !important;
   font-weight: bold !important;
+  padding: 8px 0 !important;
 }
 
 h3 {
-  font-size: 15px !important;
+  font-size: 20px !important;
   font-weight: bold !important;
+  padding: 4px 0 !important;
 }
 
 pre code {
@@ -25,10 +28,48 @@ pre code {
 }
 
 p {
+  font-size: 18px !important;
   white-space: pre-wrap !important;
-  padding-bottom: 12px;
+  padding-bottom: 12px !important;
+  padding-top: 0px !important;
 }
 
 code {
   font-family: monospace !important;
+}
+
+ol {
+  font-size: 18px !important;
+  list-style-position: inside !important;
+}
+
+ul {
+  font-size: 18px !important;
+  list-style-type: square !important;
+  list-style-position: inside !important;
+  list-style-image: none !important;
+}
+
+li ul li {
+  font-size: 18px !important;
+  padding-left: 30px;
+  list-style-type: circle !important;
+}
+
+blockquote { 
+  border-left: #ddd solid 4px !important;
+  padding: 10px !important; 
+  background: #eee !important; 
+  margin-top: 10px !important; 
+  margin-bottom: 10px !important; 
+}
+
+blockquote p { 
+  padding-bottom: 5px !important;
+  margin-top: 10px !important; 
+  margin-bottom: 10px !important; 
+}
+
+.subtitle {
+  font-weight: 300 !important;
 }

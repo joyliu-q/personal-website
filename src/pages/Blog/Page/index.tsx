@@ -5,7 +5,10 @@ import './style.css';
 import { PUBLIC_URL } from "../../../utils";
 import { BlogPageContainer } from "./BlogPageContainer"
 
-export const BlogPage = ({title, date, path}: {title: string, date: string, path: string}) => {
+export const BlogPage = (
+  {title, subtitle, date, path}: 
+  {title: string, subtitle?: string, date: string, path: string}
+) => {
   const [md, setMd] = React.useState("");
   
   function fetchMarkdown() {
@@ -29,7 +32,8 @@ export const BlogPage = ({title, date, path}: {title: string, date: string, path
   })
   return (
     <BlogPageContainer>
-      <Heading>{title}</Heading>
+      <Heading as="h1" fontSize="6xl">{title}</Heading>
+      <Heading className="subtitle">{subtitle}</Heading>
       <Text>{date}</Text>
       <Box p={2}/>
       <ReactMarkdown children={md} skipHtml/>

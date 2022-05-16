@@ -19,7 +19,7 @@ ReactDOM.render(
         <Route path="/projects" element={<Projects/>} />
         <Route path="/blog" element={<Blog/>} />
         {Object.entries(BLOGS).map(([key, value]) => {
-          return <Route key={key} path={`/blog/${key}`} element={<BlogPage date={value.date} title={value.title} path={value.path}/>} />
+          return <Route key={key} path={`/blog/${key}`} element={<BlogPage date={value.date} subtitle={value.subtitle ?? undefined} title={value.title} path={value.path}/>} />
         })}
       </Routes>
     </BrowserRouter>

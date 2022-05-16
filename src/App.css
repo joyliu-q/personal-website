@@ -54,3 +54,7 @@
 .scene_element--fadeinright {
   animation-name: fadeInRight;
 }
+
+*:focus {
+  box-shadow: none !important;
+}

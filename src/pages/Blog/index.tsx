@@ -9,7 +9,7 @@ export const Blog = (_props: any) => {
   return (
     <Flex flexDir="column" bgColor="#EEDDFF" minH="100vh">
       <NavBar currentPage='/blog'/>
-      <Container className="scene_element scene_element--fadeinup" bgColor="#FFFFFF" p={4} minH="50vh">
+      <Container maxW="container.sm" className="scene_element scene_element--fadeinup" bgColor="#FFFFFF" p={4} minH="50vh">
         <Heading as="h1">My Blog</Heading>
         <Text>Cool things I want to talk about</Text>
         <Box p={4}/>
@@ -17,9 +17,11 @@ export const Blog = (_props: any) => {
           return (
             <Flex key={key} justifyContent="space-between">
               <Link href={`/blog/${key}`}>
-                <Text as="h4" fontWeight="bold">{value.title}</Text>
+                <Text fontWeight="bold">{value.title}</Text>
               </Link>
-              <Text>{value.date}</Text>
+              <Flex display={["none", "flex"]}>
+                <Text minW="100px">{value.date}</Text>
+              </Flex>
             </Flex>
         )})}
       </Container>
