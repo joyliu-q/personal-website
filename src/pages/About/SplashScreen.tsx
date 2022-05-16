@@ -24,7 +24,7 @@ export const SplashScreen = () => {
     <Flex flexDirection="column" flexDir="column" textTransform="uppercase" bgImage="url(splashBg.svg)" >
       <Container display="flex" justifyContent="center" alignContent="center" maxW="container.lg" className="scene_element scene_element--fadeinup" minH="calc(100vh - 60px)" maxH="100%" centerContent zIndex={1}>
         <Center display="flex" flexDir={['column', 'row']}>
-          <Image rounded="50%" src="pfp.jpeg" boxSize='250px' p={4}/>
+          <Image rounded="50%" src="/assets/pfp.png" boxSize='250px' p={4}/>
           <Flex flexDir="column" justifyContent="center" alignContent="center">
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
               Qijia “Joy” Liu

@@ -1,7 +1,6 @@
 import React from "react";
 import { Heading, Text, Box } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
-import { PUBLIC_URL } from "../../../utils";
 import { BlogPageContainer } from "./BlogPageContainer"
 import './style.css';
 
@@ -10,9 +9,10 @@ export const BlogPage = (
   {title: string, subtitle?: string, date: string, path: string}
 ) => {
   const [md, setMd] = React.useState("");
-  
+  const markdownFile = require(`../../../../public/blog/${path}`);
+
   function fetchMarkdown() {
-    return fetch(`${PUBLIC_URL}/blog/${path}`).then(function (response) {
+    return fetch(markdownFile).then(function (response) {
       let reader = response.body?.getReader();
       let decoder = new TextDecoder('utf-8');
       return reader?.read().then(function (result) {
