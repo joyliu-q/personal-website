@@ -1,20 +1,15 @@
-import { BlogPageContainer } from "./BlogPageContainer"
 import React from "react";
 import { Heading, Text, Box } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
-import './style.css'; // Tell webpack that Button.js uses these styles
-
-export const PUBLIC_URL = process.env.PUBLIC_URL ?? "http://localhost:3000";
+import './style.css';
+import { PUBLIC_URL } from "../../../utils";
+import { BlogPageContainer } from "./BlogPageContainer"
 
 export const BlogPage = ({title, date, path}: {title: string, date: string, path: string}) => {
   const [md, setMd] = React.useState("");
-
-  // http://localhost:3000/blog/example-1.md
-
-  console.log(`${PUBLIC_URL}/blog/${path}.md`);
   
   function fetchMarkdown() {
-    return fetch(`http://localhost:3000/blog/${path}`).then(function (response) {
+    return fetch(`${PUBLIC_URL}/blog/${path}`).then(function (response) {
       let reader = response.body?.getReader();
       let decoder = new TextDecoder('utf-8');
       return reader?.read().then(function (result) {

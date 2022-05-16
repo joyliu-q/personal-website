@@ -1,11 +1,11 @@
-import { NavBar } from '../../components/NavBar'
 import { Heading, Flex, Container, Text, Link, Box } from '@chakra-ui/react'
+import { NavBar } from '../../components/NavBar'
 
 export const Projects = (_props: any) => {
   return (
     <Flex flexDir="column" bgColor="#EEDDFF" minH="100vh">
       <NavBar currentPage={"/projects"}/>
-      <Container bgColor="#FFFFFF" h="100%" p={4}>
+      <Container className="scene_element scene_element--fadeinup" bgColor="#FFFFFF" h="100%" p={4}>
         <Heading as='h1'>
           Coming Soon!
         </Heading>

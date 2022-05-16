@@ -1,21 +1,14 @@
-import { NavBar } from '../../components/NavBar'
 import { Heading, Flex, Container, Text, Link, Box } from '@chakra-ui/react'
+import { NavBar } from '../../components/NavBar'
+import { BLOGS } from './entries';
 
 export * from './Page';
-
-export const BLOGS = {
-  "example-1": {
-    "title": "Example blog",
-    "date": "2022-05-15",
-    "path": "example-1.md",
-  },
-}
 
 export const Blog = (_props: any) => {
   return (
     <Flex flexDir="column" bgColor="#EEDDFF" minH="100vh">
       <NavBar currentPage='/blog'/>
-      <Container bgColor="#FFFFFF" p={4} minH="50vh">
+      <Container className="scene_element scene_element--fadeinup" bgColor="#FFFFFF" p={4} minH="50vh">
         <Heading as="h1">My Blog</Heading>
         <Text>Cool things I want to talk about</Text>
         <Box p={4}/>

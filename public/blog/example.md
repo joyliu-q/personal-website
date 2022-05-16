@@ -22,4 +22,3 @@ switch (lmao) {
     console.log("LMAO");
 }
 ```
-
