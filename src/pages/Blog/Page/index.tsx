@@ -10,13 +10,14 @@ export const BlogPage = (
 ) => {
   const [md, setMd] = React.useState("");
   const markdownFile = require(`../../../../public/blog/${path}`);
+  console.log("Markdown");
+  console.log(markdownFile);
 
   function fetchMarkdown() {
-    return fetch(markdownFile).then(function (response) {
+    return fetch(`blog/${path}`).then(function (response) {
       let reader = response.body?.getReader();
       let decoder = new TextDecoder('utf-8');
       return reader?.read().then(function (result) {
-        console.log(result)
         return decoder.decode(result.value);
       });
     });
