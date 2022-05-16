@@ -1,9 +1,9 @@
 import React from "react";
 import { Heading, Text, Box } from "@chakra-ui/react";
 import ReactMarkdown from 'react-markdown';
-import './style.css';
 import { PUBLIC_URL } from "../../../utils";
 import { BlogPageContainer } from "./BlogPageContainer"
+import './style.css';
 
 export const BlogPage = (
   {title, subtitle, date, path}: 
@@ -33,10 +33,10 @@ export const BlogPage = (
   return (
     <BlogPageContainer>
       <Heading as="h1" fontSize="6xl">{title}</Heading>
-      <Heading className="subtitle">{subtitle}</Heading>
+      <Heading className="blog subtitle" fontWeight={300}>{subtitle}</Heading>
       <Text>{date}</Text>
       <Box p={2}/>
-      <ReactMarkdown children={md} skipHtml/>
+      <ReactMarkdown className="blog" children={md} skipHtml/>
     </BlogPageContainer>
   )
 }

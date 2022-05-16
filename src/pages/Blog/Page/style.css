@@ -1,22 +1,22 @@
-h1 {
+.blog h1 {
   font-size: 32px !important;
   font-weight: bold !important;
   padding: 12px 0 !important;
 }
 
-h2 {
+.blog h2 {
   font-size: 24px !important;
   font-weight: bold !important;
   padding: 8px 0 !important;
 }
 
-h3 {
+.blog h3 {
   font-size: 20px !important;
   font-weight: bold !important;
   padding: 4px 0 !important;
 }
 
-pre code {
+.blog pre code {
   display: block !important;
   background: none !important;
   white-space: pre !important;
@@ -27,36 +27,36 @@ pre code {
   padding: 0 !important;
 }
 
-p {
+.blog p {
   font-size: 18px !important;
   white-space: pre-wrap !important;
   padding-bottom: 12px !important;
   padding-top: 0px !important;
 }
 
-code {
+.blog code {
   font-family: monospace !important;
 }
 
-ol {
+.blog ol {
   font-size: 18px !important;
   list-style-position: inside !important;
 }
 
-ul {
+.blog ul {
   font-size: 18px !important;
   list-style-type: square !important;
   list-style-position: inside !important;
   list-style-image: none !important;
 }
 
-li ul li {
+.blog li ul li {
   font-size: 18px !important;
   padding-left: 30px;
   list-style-type: circle !important;
 }
 
-blockquote { 
+.blog blockquote { 
   border-left: #ddd solid 4px !important;
   padding: 10px !important; 
   background: #eee !important; 
@@ -64,12 +64,20 @@ blockquote {
   margin-bottom: 10px !important; 
 }
 
-blockquote p { 
+.blog blockquote p { 
   padding-bottom: 5px !important;
   margin-top: 10px !important; 
   margin-bottom: 10px !important; 
 }
 
-.subtitle {
+.blog .subtitle {
   font-weight: 300 !important;
+}
+
+.blog a {
+  color: #BE24CB !important;
+}
+
+.blog a:visited {
+  color: #741D7B !important;
 }

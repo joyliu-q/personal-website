@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react'
 import { BLOGS, Blog, BlogPage } from './pages/Blog';
 import './App.css';
+import { Footer } from './components/Footer';
 
 ReactDOM.render(
   <ChakraProvider>
@@ -23,6 +24,7 @@ ReactDOM.render(
         })}
       </Routes>
     </BrowserRouter>
+    <Footer/>
   </ChakraProvider>,
   document.getElementById('root')
 );

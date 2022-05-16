@@ -1,19 +1,19 @@
-import { Container, Heading, Flex, Text, Image, Center, Box, Link } from '@chakra-ui/react'
+import { Container, Heading, Flex, Image, Center, Box, Link } from '@chakra-ui/react'
 
 
-const ContactIcons = () => {
+export const ContactIcons = ({size = "50px", animate = false,}: {size?: string, animate?: boolean}) => {
   return (
     <Flex justifyContent={["center", "left"]} alignItems="center" flexWrap="wrap">
-      <Link href='https://github.com/joyliu-q' isExternal>
-        <Image src="/icons/github.svg" boxSize="50px" />  
+      <Link className={animate ? "scene_element scene_element--pop delay-_5s" : ""} href='https://github.com/joyliu-q' isExternal>
+        <Image src="/icons/github.svg" boxSize={size} />  
       </Link>
       <Box p={2}/>
-      <Link href='https://www.linkedin.com/in/qijia-joy-liu/' isExternal>
-        <Image src="/icons/linkedin.svg" boxSize="50px" />  
+      <Link className={animate ? "scene_element scene_element--pop delay-1s" : ""} href='https://www.linkedin.com/in/qijia-joy-liu/' isExternal>
+        <Image src="/icons/linkedin.svg" boxSize={size} />  
       </Link>
       <Box p={2}/>
-      <Link href='https://twitter.com/qjoyliu' isExternal>
-        <Image src="/icons/twitter.svg" boxSize="50px" />  
+      <Link className={animate ? "scene_element scene_element--pop delay-1_5s" : ""} href='https://twitter.com/qjoyliu' isExternal>
+        <Image src="/icons/twitter.svg" boxSize={size} />  
       </Link>
     </Flex>
   )
@@ -21,19 +21,19 @@ const ContactIcons = () => {
 
 export const SplashScreen = () => {
   return (
-    <Flex py={20} flexDirection="column" flexDir="column" textTransform="uppercase" bgImage="url(splashBg.svg)" >
-      <Container className="scene_element scene_element--fadeinup"  maxW="700px" maxH="100%" centerContent zIndex={1}>
-        <Center display="flex" flexDir={['column', 'row']} justifyContent="center" alignContent="center">
-          <Image src="pfp.jpeg" boxSize='200px' p={4}/>
-          <Flex flexDir="column">
-            <Heading as='h1' size='3xl'>
+    <Flex flexDirection="column" flexDir="column" textTransform="uppercase" bgImage="url(splashBg.svg)" >
+      <Container display="flex" justifyContent="center" alignContent="center" maxW="container.lg" className="scene_element scene_element--fadeinup" minH="calc(100vh - 60px)" maxH="100%" centerContent zIndex={1}>
+        <Center display="flex" flexDir={['column', 'row']}>
+          <Image rounded="50%" src="pfp.jpeg" boxSize='250px' p={4}/>
+          <Flex flexDir="column" justifyContent="center" alignContent="center">
+            <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
               Qijia “Joy” Liu
             </Heading>
-            <Text>
+            <Heading as="h3" size="md" fontWeight="normal">
               Developer • creator • Learner
-            </Text>
+            </Heading>
             <Box p={2}/>
-            <ContactIcons/>
+            <ContactIcons animate/>
           </Flex>
         </Center>
       </Container>
