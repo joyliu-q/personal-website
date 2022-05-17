@@ -9,12 +9,12 @@ export const BlogPage = (
   {title: string, subtitle?: string, date: string, path: string}
 ) => {
   const [md, setMd] = React.useState("");
-  const markdownFile = require(`../../../../public/blog/${path}`);
+  const markdownFile = require(`../../../../build/blog/${path}`);
   console.log("Markdown");
   console.log(markdownFile);
 
   function fetchMarkdown() {
-    return fetch(`blog/${path}`).then(function (response) {
+    return fetch(markdownFile).then(function (response) {
       let reader = response.body?.getReader();
       let decoder = new TextDecoder('utf-8');
       return reader?.read().then(function (result) {

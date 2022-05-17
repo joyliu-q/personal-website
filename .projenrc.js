@@ -17,3 +17,4 @@ const project = new web.ReactTypeScriptProject({
   // packageName: undefined,  /* The "name" in package.json. */
 });
 project.synth();
+project.addFields({['proxy']: 'http://localhost:3000'});
