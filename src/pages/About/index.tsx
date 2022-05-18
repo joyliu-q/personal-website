@@ -10,7 +10,7 @@ export const About = (_props: any) => {
       <Flex bgColor="#FFFFFF" mb={10}>
         <Container py={10} zIndex={1}>
           <Heading>
-            Hello! I am Joy
+            Hello! I'm Joy
           </Heading>
           <Text>
             I'm a student at the University of 
