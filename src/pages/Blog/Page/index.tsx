@@ -5,13 +5,13 @@ import { BlogPageContainer } from "./BlogPageContainer"
 import './style.css';
 
 export const BlogPage = (
-  {title, subtitle, date, path}: 
+  {title, subtitle, date}: 
   {title: string, subtitle?: string, date: string, path: string}
 ) => {
   const [md, setMd] = React.useState("");
 
   function fetchMarkdown() {
-    return fetch(`https://raw.githubusercontent.com/joyliu-q/personal-website/main/blog/${path}`).then(function (response) {
+    return fetch(`https://raw.githubusercontent.com/joyliu-q/personal-website/main/blog/2022-05-16.md`).then(function (response) {
       let reader = response.body?.getReader();
       let decoder = new TextDecoder('utf-8');
       return reader?.read().then(function (result) {
