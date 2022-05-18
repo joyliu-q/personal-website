@@ -1,4 +1,4 @@
-import { Container, Flex, Text, Link, Box } from '@chakra-ui/react'
+import { Container, Flex, Text, Link, Box, Heading } from '@chakra-ui/react'
 import { NavBar } from '../../components/NavBar'
 import { SplashScreen } from './SplashScreen';
 
@@ -9,8 +9,11 @@ export const About = (_props: any) => {
       <SplashScreen/>
       <Flex bgColor="#FFFFFF" mb={10}>
         <Container py={10} zIndex={1}>
+          <Heading>
+            Hello! I am Joy
+          </Heading>
           <Text>
-            Hello! I am Joy, a student at the University of 
+            I'm a student at the University of 
             Pennsylvania’s <Link textColor="#741D7B" href="https://fisher.wharton.upenn.edu/" isExternal>Jerome Fisher Program in Management and Technology</Link> pursuing a B.S.E. in Computer Science and B.S. in Economics from Wharton.
           </Text>
           <Box p={2}/>

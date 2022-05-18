@@ -1,4 +1,5 @@
 import { Container, Heading, Flex, Image, Center, Box, Link } from '@chakra-ui/react'
+import React from 'react';
 
 
 export const ContactIcons = ({size = "50px", animate = false,}: {size?: string, animate?: boolean}) => {
@@ -20,11 +21,25 @@ export const ContactIcons = ({size = "50px", animate = false,}: {size?: string, 
 }
 
 export const SplashScreen = () => {
+  const [showMe, setShowMe] = React.useState(Math.random() > 0.5 ? true : false);
+
+  React.useEffect(() => {
+    setShowMe(Math.random() > 0.5 ? true : false);
+  }, [])
   return (
     <Flex flexDirection="column" flexDir="column" textTransform="uppercase" bgImage="url(splashBg.svg)" >
       <Container display="flex" justifyContent="center" alignContent="center" maxW="container.lg" className="scene_element scene_element--fadeinup" minH="calc(100vh - 60px)" maxH="100%" centerContent zIndex={1}>
         <Center display="flex" flexDir={['column', 'row']}>
-          <Image rounded="50%" src="/assets/pfp.png" boxSize='250px' p={4}/>
+          <Image 
+            rounded="50%" 
+            onMouseOver={() => {
+              setShowMe(!showMe);
+            }} 
+            onMouseLeave={() => {
+              setShowMe(!showMe);
+            }}
+            src={showMe ? "assets/pic.png" : "assets/pfp.png"} boxSize='250px' p={4}
+          />
           <Flex flexDir="column" justifyContent="center" alignContent="center">
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
               Qijia “Joy” Liu
