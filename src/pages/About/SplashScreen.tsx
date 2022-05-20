@@ -27,7 +27,7 @@ export const SplashScreen = () => {
     setShowMe(Math.random() > 0.5 ? true : false);
   }, [])
   return (
-    <Flex flexDirection="column" flexDir="column" textTransform="uppercase" bgImage="url(splashBg.svg)" >
+    <Flex flexDirection="column" flexDir="column" textTransform="uppercase" bgImage="url(assets/splash-bg.svg)" bgRepeat="no-repeat" bgSize="contain">
       <Container display="flex" justifyContent="center" alignContent="center" maxW="container.lg" className="scene_element scene_element--fadeinup" minH="calc(100vh - 60px)" maxH="100%" centerContent zIndex={1}>
         <Center display="flex" flexDir={['column', 'row']}>
           <Image 

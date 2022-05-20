@@ -7,7 +7,7 @@ export * from './entries';
 
 export const Blog = (_props: any) => {
   return (
-    <Flex flexDir="column" bgColor="#333333" minH="100vh">
+    <Flex flexDir="column" className='container-bg' minH="100vh">
       <NavBar currentPage='/blog'/>
       <Container maxW="container.lg" bgColor="#FFFFFF" p={4} minH="calc(100vh - 60px)">
         <Heading as="h1" fontSize="6xl">My Blog</Heading>

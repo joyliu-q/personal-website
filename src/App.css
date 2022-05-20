@@ -70,7 +70,7 @@
   animation-name: animateFlip;
   transform-style: preserve-3d;
   perspective: 1000px;
-  animation-duration: 2s !important;
+  animation-duration: 1s !important;
 }
 
 .scene_element--pop {
@@ -101,4 +101,9 @@
 
 *:focus {
   box-shadow: none !important;
+}
+
+.container-bg {
+  background-color: #333333;
+  background-image: url("../public/assets/container-pattern.svg");
 }

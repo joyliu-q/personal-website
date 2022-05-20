@@ -5,8 +5,8 @@ export const Projects = (_props: any) => {
   return (
     <Flex flexDir="column" minH="100vh">
       <NavBar currentPage={"/projects"}/>
-      <Flex alignContent="center" justifyContent="center" minH="calc(100vh - 60px)" bgColor="#333333">
-        <Container maxW="container.lg" className="scene_element scene_element--flip" bgColor="#FFFFFF" my={4} p={4}>
+      <Flex alignContent="center" className='container-bg' justifyContent="center" minH="calc(100vh - 60px)" bgColor="#BA9BE3">
+        <Container maxW="container.lg" className="scene_element" bgColor="#FFFFFF" my={4} p={4}>
           <Heading as='h1' fontSize="6xl">
             Coming Soon!
           </Heading>
