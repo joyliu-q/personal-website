@@ -2,31 +2,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-import { About } from './pages/About';
-import { Projects } from './pages/Projects';
-
 // Routing Imports
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react'
-import { BLOGS, Blog, BlogPage } from './pages/Blog';
 import './App.css';
-import { Footer } from './components/Footer';
-import { NotFoundPage } from './pages/NotFound';
+import App from './App';
+import chakra from './theme/chakra';
 
 ReactDOM.render(
-  <ChakraProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<About/>} />
-        <Route path="/projects" element={<Projects/>} />
-        <Route path="/blog" element={<Blog/>} />
-        {Object.entries(BLOGS).map(([key, value]) => {
-          return <Route key={key} path={`/blog/${key}`} element={<BlogPage date={value.date} subtitle={value.subtitle ?? undefined} title={value.title} path={value.path}/>} />
-        })}
-        <Route path="*" element={<NotFoundPage/>} />
-      </Routes>
-    </BrowserRouter>
-    <Footer/>
+  <ChakraProvider theme={chakra} resetCSS>
+    <App />
   </ChakraProvider>,
   document.getElementById('root')
 );

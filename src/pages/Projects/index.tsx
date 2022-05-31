@@ -1,10 +1,10 @@
 import { Heading, Flex, Container, Text, Link, Box } from '@chakra-ui/react'
-import { NavBar } from '../../components/NavBar'
+import NavBar from '../../components/NavBar'
 
 export const Projects = (_props: any) => {
   return (
     <Flex flexDir="column" minH="100vh">
-      <NavBar currentPage={"/projects"}/>
+      <NavBar currentPage={"/projects"} />
       <Flex alignContent="center" className='container-bg' justifyContent="center" minH="calc(100vh - 60px)" bgColor="#BA9BE3">
         <Container maxW="container.lg" className="scene_element" bgColor="#FFFFFF" my={4} p={4}>
           <Heading as='h1' fontSize="6xl">
@@ -15,7 +15,7 @@ export const Projects = (_props: any) => {
           </Text>
           <Flex alignContent="center" my={4}>
             <Text fontSize="20px" width="300px" whiteSpace={"pre-wrap"}>
-            {`
+              {`
             ⊂ヽ
             　 ＼＼ Λ＿Λ
             　　 ＼( 'ㅅ' )
@@ -33,7 +33,7 @@ export const Projects = (_props: any) => {
             `}
             </Text>
           </Flex>
-          <Box p={2}/>
+          <Box p={2} />
         </Container>
       </Flex>
     </Flex>

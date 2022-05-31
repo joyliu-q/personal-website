@@ -1,5 +1,5 @@
 import { Heading, Flex, Container, Text, Link, Box } from '@chakra-ui/react'
-import { NavBar } from '../../components/NavBar'
+import NavBar from '../../components/NavBar'
 import { BLOGS } from './entries';
 
 export * from './Page';
