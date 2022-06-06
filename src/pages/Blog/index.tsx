@@ -12,7 +12,7 @@ export const Blog = (_props: any) => {
       <Flex p={[0, 4]}>
         <Container maxW="container.lg" bgColor="#FFFFFF" p={[4, 8]} minH="calc(100vh - 60px)" borderRadius={4}>
           <Heading as="h1" fontSize="6xl">My Blog</Heading>
-          <Heading className="blog subtitle" fontWeight={300}>Cool things I want to talk about</Heading>
+          <Heading variant="subtitle" fontWeight={300}>Cool things I want to talk about</Heading>
           <Box p={4}/>
           {Object.entries(BLOGS).map(([key, value]) => {
             return (

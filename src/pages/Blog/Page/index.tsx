@@ -31,7 +31,7 @@ export const BlogPage = (
   return (
     <BlogPageContainer>
       <Heading as="h1" fontSize="6xl">{title}</Heading>
-      <Heading className="blog subtitle" fontWeight={300}>{subtitle}</Heading>
+      <Heading variant="subtitle" fontWeight={300}>{subtitle}</Heading>
       <Text>{date}</Text>
       <Box p={2}/>
       <ReactMarkdown className="blog" children={md} skipHtml/>

@@ -1,7 +1,19 @@
 const config = {
   baseStyle: {
     my: 0,
-    fontFamily: "'Open Sans', sans-serif",
+  },
+  variants: {
+    default: {
+      fontFamily: "'Open Sans', sans-serif",
+    },
+    subtitle: {
+      fontFamily: "'Quicksand', sans-serif",
+      fontWeight: 300,
+      fontSize: "30px",
+    }
+  },
+  defaultProps: {
+    variant: 'default',
   },
 };
 
