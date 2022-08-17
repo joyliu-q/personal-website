@@ -3,4 +3,5 @@ export const THEME_COLORS = {
   base: "#333333",
   lightAccent: "#FFF4CC",
   accent: '#EEDDFF',
+  darkAccent: 'rgba(150, 150, 225, 1)',
 }
