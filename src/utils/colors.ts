@@ -1,7 +1,10 @@
 export const THEME_COLORS = {
-  text: "#61DAFB",
+  text: "#333333",
   base: "#333333",
-  lightAccent: "#FFF4CC",
-  accent: '#EEDDFF',
-  darkAccent: 'rgba(150, 150, 225, 1)',
+  lightAccent: "#FFF4CC", // yellow
+  accent: '#EEDDFF', // light purple
+}
+
+export const THEME_COLORS_EXTENDED = {
+  inputBg: "#FFF",
 }

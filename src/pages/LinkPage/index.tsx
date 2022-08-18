@@ -1,30 +1,34 @@
 import { Box, Heading } from "@chakra-ui/react"
 import React from "react";
-import { getLinkMap, LinkData } from "../../utils";
+import { getLinkByTo } from "../../utils";
 import { THEME_COLORS } from "../../utils/colors";
 import Typed from "typed.js";
 import BirdBackground from "./Bird";
+import { Link } from "../../API";
 
 export default () => {
-  const [link, setLink] = React.useState(undefined as LinkData | undefined);
+  const [link, setLink] = React.useState(undefined as Link | undefined);
   React.useEffect(() => {
-    const shortlink = window.location.pathname.replace(/\//g, '');
+    async function fetchData() {
+      const shortlink = window.location.pathname.replace(/\//g, '');
 
-    // Find redirect link
-    const redirect = getLinkMap().get(shortlink);
-    setLink(redirect);
+      // Find redirect link
+      const redirect = await getLinkByTo(shortlink);
 
-    // If no link exists, redirect to not found page
-    if (!redirect) {
-      window.location.href = '/not-found';
-      return;
+      // If no link exists, redirect to not found page
+      if (redirect == undefined) {
+        window.location.href = '/not-found';
+        return;
+      }
+
+      // Else redirect
+      setLink(redirect);
+      let timeoutId = setTimeout(function () {
+        window.location.href = redirect.from;
+        window.clearTimeout(timeoutId);		// clear time out.
+      }, 5000);
     }
-
-    // Else redirect
-    let timeoutId = setTimeout(function () {
-      window.location.href = redirect.to;
-      window.clearTimeout(timeoutId);		// clear time out.
-    }, 5000);
+    fetchData();
   }, [])
 
   // Create reference to store the Typed wrapper
@@ -36,7 +40,7 @@ export default () => {
     // Typer logic
     const options = {
       strings: [
-        `Redirecting to ${link?.to}...`,
+        `Redirecting to ${link?.from}...`,
       ],
       typeSpeed: 50,
       backSpeed: 50,
