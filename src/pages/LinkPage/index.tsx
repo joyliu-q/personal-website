@@ -24,7 +24,7 @@ export default () => {
       // Else redirect
       setLink(redirect);
       let timeoutId = setTimeout(function () {
-        window.location.href = redirect.from;
+        window.location.replace(redirect.from);
         window.clearTimeout(timeoutId);		// clear time out.
       }, 5000);
     }
