@@ -47,9 +47,11 @@ function mapListTodosQuery(listLinksQuery: GraphQLResult<ListLinksQuery>): Link[
 }
 
 export async function getLinkByTo(to: string) { 
+  console.log("getLinkByTo", to)
   let res;
   try {
     res = await API.graphql({ query: getLink, variables: { id: to } as GetLinkQueryVariables }) as GraphQLResult<GetLinkQuery>;
+    console.log(res)
   } catch (err) {
     return undefined;
   } 
@@ -59,6 +61,7 @@ export async function getLinkByTo(to: string) {
   if (res.errors) {
     return undefined;
   }
+  console.log("Lol")
   const link = res.data?.getLink;
   return ({
     id: link?.id,

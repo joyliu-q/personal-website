@@ -1,7 +1,7 @@
 {
   "name": "personal-website",
   "scripts": {
-    "build": "npx projen build",
+    "build": "react-scripts build",
     "clobber": "npx projen clobber",
     "compile": "npx projen compile",
     "default": "npx projen default",

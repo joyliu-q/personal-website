@@ -11,13 +11,14 @@ export default () => {
   React.useEffect(() => {
     async function fetchData() {
       const shortlink = window.location.pathname.replace(/\//g, '');
+      console.log('shortlink', shortlink);
 
       // Find redirect link
       const redirect = await getLinkByTo(shortlink);
 
       // If no link exists, redirect to not found page
       if (redirect == undefined) {
-        window.location.href = '/not-found';
+        // window.location.href = '/not-found';
         return;
       }
 
