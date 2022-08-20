@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/react"
 import React from "react";
-import { getLinkByTo } from "../../utils";
+import { getLinkByAlias } from "../../utils";
 import { THEME_COLORS } from "../../utils/colors";
 import Typed from "typed.js";
 import BirdBackground from "./Bird";
@@ -10,11 +10,10 @@ export default () => {
   const [link, setLink] = React.useState(undefined as Link | undefined);
   React.useEffect(() => {
     async function fetchData() {
-      const shortlink = window.location.pathname.replace(/\//g, '');
-      console.log('shortlink', shortlink);
+      const alias = window.location.pathname.replace(/\//g, '');
 
       // Find redirect link
-      const redirect = await getLinkByTo(shortlink);
+      const redirect = await getLinkByAlias(alias);
 
       // If no link exists, redirect to not found page
       if (redirect == undefined) {

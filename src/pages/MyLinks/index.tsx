@@ -20,11 +20,11 @@ function isValidUrl(str: string) {
 
 const MyLinks = (_props: any) => {
   const [links, setLinks] = React.useState([] as Link[]);
+  async function fetchData() {
+    const data = await getLinks();
+    setLinks(data);
+  }
   React.useEffect(() => {
-    async function fetchData() {
-      const data = await getLinks();
-      setLinks(data);
-    }
     fetchData();
   }, [])
 
@@ -54,6 +54,7 @@ const MyLinks = (_props: any) => {
                   setTimeout(async () => {
                     console.log(JSON.stringify(values, null, 2));
                     await addLink(values);
+                    await fetchData();
                     actions.setSubmitting(false)
                   }, 1000)
                 }}

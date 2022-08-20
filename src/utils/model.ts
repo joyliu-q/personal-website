@@ -14,11 +14,11 @@ const hashFromAddress = (from: string) => {
 
 export async function addLink({ from, to }: { from: string, to?: string }) {
   // TODO: make sure it's a valid link
-
+  const alias = to ?? hashFromAddress(from);
   const link = {
-    id: hashFromAddress(from),
+    id: alias,
     from,
-    to: to ?? hashFromAddress(from),
+    to: alias,
   };
 
   console.log(link);
@@ -46,8 +46,7 @@ function mapListTodosQuery(listLinksQuery: GraphQLResult<ListLinksQuery>): Link[
   } as Link)) || []
 }
 
-export async function getLinkByTo(to: string) { 
-  console.log("getLinkByTo", to)
+export async function getLinkByAlias(to: string) { 
   let res;
   try {
     res = await API.graphql({ query: getLink, variables: { id: to } as GetLinkQueryVariables }) as GraphQLResult<GetLinkQuery>;
