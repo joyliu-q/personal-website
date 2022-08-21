@@ -5,10 +5,13 @@ const project = new web.ReactTypeScriptProject({
   deps: [
     "react-router-dom",
     "@chakra-ui/react",
+    '@chakra-ui/icons',
     "react-markdown",
     "framer-motion",
     "@emotion/react@^11",
-    "@emotion/styled@^11"
+    "@emotion/styled@^11",
+    'react-icons',
+    'sass',
   ],
   depsUpgrade: false,
 
