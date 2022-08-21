@@ -10,18 +10,18 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
         <Image src={project.image} filter="none" />
       </Flex>
       <VStack flexGrow={2} p={[4, 8]} className="card-inner" m={[2, 4]} borderRadius={4}>
-        <Flex justifyContent={"space-between"} width="100%" maxHeight="100px">
+        <Flex flexDir={['column', 'row']} justifyContent={"space-between"} width="100%" maxHeight="100px">
           <Heading as="a" href={project.link}>{project.title}</Heading>
           <HStack>
             {project.link && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.link} isExternal>
-              <LinkIcon boxSize="25px" color={getExtendedThemeColors(isDark).greyDark} />
+              <LinkIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).greyDark} />
             </Link>}
             {project.github && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.github} isExternal>
-              <GithubIcon boxSize={"25px"} color={getExtendedThemeColors(isDark).greyDark} fill={getExtendedThemeColors(isDark).greyDark} />
+              <GithubIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).greyDark} fill={getExtendedThemeColors(isDark).greyDark} />
             </Link>}
           </HStack>
         </Flex>
-        <Flex fontSize="xl">
+        <Flex>
           {project.description}
         </Flex>
       </VStack >
@@ -37,22 +37,22 @@ export const ProjectCard = ({ isDark = false, project }: { isDark?: boolean, pro
           <Image flexGrow={1} src={project.image} filter="none" />
         </Flex>
         <Flex p={[4, 8]} flexDir="column">
-          <Flex justifyContent={"space-between"} width="100%" maxHeight="100px">
+          <Flex flexDir={['column', 'row']} justifyContent={"space-between"} width="100%" maxHeight="100px">
             <Heading as="a" href={project.link}>{project.title}</Heading>
             <HStack>
               {project.link && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.link} isExternal>
-                <LinkIcon boxSize="25px" color={getExtendedThemeColors(isDark).greyDark} _hover={{ color: getExtendedThemeColors(isDark).primary }} />
+                <LinkIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).greyDark} _hover={{ color: getExtendedThemeColors(isDark).primary }} />
               </Link>}
               {project.github && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.github} isExternal>
-                <GithubIcon boxSize={"25px"} color={getExtendedThemeColors(isDark).greyDark} fill={getExtendedThemeColors(isDark).greyDark} _hover={{ color: getExtendedThemeColors(isDark).primary, fill: getExtendedThemeColors(isDark).primary }} />
+                <GithubIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).greyDark} fill={getExtendedThemeColors(isDark).greyDark} _hover={{ color: getExtendedThemeColors(isDark).primary, fill: getExtendedThemeColors(isDark).primary }} />
               </Link>}
             </HStack>
           </Flex>
-          <Flex fontSize="xl">
+          <Flex>
             {project.description}
           </Flex>
         </Flex>
-      </VStack >
+      </VStack>
     </Flex >
   )
 }
