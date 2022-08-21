@@ -7,17 +7,18 @@ export default ({ currentPage }: { currentPage: string }) => {
 
   return (
     <Flex
+      width="100vw"
       bgColor={colorMode === 'dark' ?
         (currentPage === '/' ? getExtendedThemeColors(true).greyLight2 : getExtendedThemeColors(true).greyLight3)
         : (currentPage === '/' ? getExtendedThemeColors().greyLight1 : THEME_COLORS.lightAccent)}
       position="sticky" top="0" zIndex={2}
-      py={8}
+      py={4}
       px={4} textTransform="uppercase" fontSize="xl"
-      height="60px"
+      height={["auto", "60px"]}
       alignContent="center"
       justifyContent={"space-between"}
     >
-      <Flex justifyContent={"center"} alignItems="center" mr={4}>
+      <Flex justifyContent={["center", "left"]} alignItems="center" mr={4} width="100%">
         <Link href='/' display={["none", "block"]} width="50px" height="50px">
           <LogoIcon boxSize="50px" fill={colorMode === 'dark' ? getExtendedThemeColors().primary : THEME_COLORS.dark} />
         </Link>
@@ -31,7 +32,7 @@ export default ({ currentPage }: { currentPage: string }) => {
         ))}
       </Flex>
 
-      <Flex mx={4} alignItems="center" justifyContent={"center"} >
+      <Flex alignItems="center" justifyContent={"center"} position={["fixed", "inherit"]} bottom="24px" right="24px">
         <IconButton _focus={{
           boxShadow: `inset .2rem .2rem .5rem ${getExtendedThemeColors(colorMode === 'dark').greyLight1}, inset -.2rem -.2rem .5rem #fff`
         }} _active={{

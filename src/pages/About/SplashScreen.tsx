@@ -48,7 +48,7 @@ export const SplashScreen = () => {
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
               Qijia “Joy” Liu
             </Heading>
-            <Heading as="h3" size="md" fontWeight="normal">
+            <Heading as="h3" size="md" fontWeight="normal" textAlign={['center', 'left']}>
               Developer • creator • Learner
             </Heading>
             <Box p={2} />
@@ -56,6 +56,6 @@ export const SplashScreen = () => {
           </Flex>
         </Center>
       </Container>
-    </Flex>
+    </Flex >
   );
 }
