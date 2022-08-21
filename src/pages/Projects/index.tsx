@@ -1,46 +1,31 @@
-import { Heading, Flex, Container, Link } from '@chakra-ui/react'
+import { Heading, Flex, Container, useColorMode } from '@chakra-ui/react'
 import NavBar from '../../components/NavBar'
+import { getExtendedThemeColors } from '../../utils';
 import ProjectList from './ProjectList';
 
 export const Projects = (_props: any) => {
+  const { colorMode } = useColorMode()
+
   return (
-    <Flex flexDir="column" minH="100vh">
+    // TODO: border controlled by this line
+    <Flex flexDir="column" minH="100vh" bgColor={getExtendedThemeColors(colorMode == 'dark').greyLight1}>
       <NavBar currentPage={"/projects"} />
-      <Flex minH="calc(100vh - 60px)" className='container-bg' flexDir="column" >
-        <Flex alignContent="center" justifyContent="center" p={[0, 4]}>
-          <Container maxW='container.lg' bgColor="#FFFFFF" p={[4, 8]} borderRadius={4}>
-            <Heading as='h1' fontSize="6xl">
-              Projects: Coming Soon!
-            </Heading>
-            <Heading variant="subtitle" fontWeight={300}>Meanwhile, checkout my <Link href='https://github.com/joyliu-q?tab=repositories' isExternal fontWeight="bold">Github Projects</Link> :D</Heading>
-          </Container>
-        </Flex>
-        <Flex alignContent="center" justifyContent="center" p={[0, 4]}>
-          <Flex alignContent="center" my={4} width="100%">
-            <Container maxW='container.lg' p={0}>
-              <ProjectList />
-              {/* <Text fontSize="20px" width="300px" whiteSpace={"pre-wrap"}>
-              {`
-            ⊂ヽ
-            　 ＼＼ Λ＿Λ
-            　　 ＼( 'ㅅ' )
-            　　　 >　⌒ヽ have
-            　　　/ 　 へ ＼ a 
-            　　 /　　/　＼＼ good 
-            　　 ﾚ　ノ　　 ヽつ day 
-            　　/　/
-            　 /　/|
-            　(　(ヽ
-            　|　|、＼
-            　| 丿 ＼ ⌒)
-            　| |　　) )
-            ⊂ヽ
-            `}
-            </Text> */}
-            </Container>
+      <Container maxW="container.xl" minH="calc(100vh - 60px)" className='container-bg' flexDir="column">
+        <Flex alignContent="center" justifyContent="center" p={4}>
+          <Flex maxW='container.lg' p={[4, 6]} borderRadius={4} className="card" width="100%">
+            <Flex className="card-inner" p={4} width="100%">
+              <Heading as='h1' fontSize="4xl" width="100%" textAlign={"center"}>
+                Projects
+              </Heading>
+            </Flex>
           </Flex>
         </Flex>
-      </Flex>
-    </Flex>
+        <Flex alignContent="center" my={4} width="100%">
+          <Container maxW='container.lg' p={0}>
+            <ProjectList />
+          </Container>
+        </Flex>
+      </Container>
+    </Flex >
   );
 };

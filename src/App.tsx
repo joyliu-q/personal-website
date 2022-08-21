@@ -11,10 +11,14 @@ import Footer from './components/Footer';
 import { NotFoundPage } from './pages/NotFound';
 
 import './App.css';
+import './utils/util.scss';
+import { useColorMode } from '@chakra-ui/react';
 
 function App() {
+  const { colorMode } = useColorMode()
+
   return (
-    <div className="App">
+    <div className={`App ${colorMode === 'dark' && ' dark'}`} >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<About />} />

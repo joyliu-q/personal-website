@@ -1,34 +1,58 @@
-import { Flex, Image, Link, Text, Box } from '@chakra-ui/react'
+import { Flex, Icon, IconButton, Link, Text, useColorMode } from '@chakra-ui/react'
+import { THEME_COLORS, getExtendedThemeColors, LogoIcon } from '../utils'
+import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 
-type NavTheme = 'light' | 'dark'
+export default ({ currentPage }: { currentPage: string }) => {
+  const { colorMode, toggleColorMode } = useColorMode()
 
-// TODO: improve dark theme
-export default ({ currentPage, theme = 'light' }: { currentPage: string, theme?: NavTheme }) => {
   return (
-    <Flex py={2} px={4} textTransform="uppercase" fontSize="xl"
-      bgColor={theme === 'light' ? "#EEDDFF" : '#333333'} h="60px" alignContent="center"
-      textColor={theme === 'light' ? '#333333' : '#FFFFFF'}>
-      <Link href='/' display={["none", "block"]} width="50px" height="50px">
-        <Image src="/logo.svg" boxSize="50px" />
-      </Link>
-      <Box p={4} display={["none", "block"]} />
-      <Link href='/' fontWeight={
-        currentPage === '/' ? 'bold' : 'normal'
-      } display="flex" flexDir="column" justifyContent="center">
-        <Text as="a">About</Text>
-      </Link>
-      <Box p={4} />
-      <Link href='/projects' fontWeight={
-        currentPage === '/projects' ? 'bold' : 'normal'
-      } display="flex" flexDir="column" justifyContent="center">
-        <Text as="a" variant="link">Projects</Text>
-      </Link>
-      <Box p={4} />
-      <Link href='/blog' fontWeight={
-        currentPage === '/blog' ? 'bold' : 'normal'
-      } display="flex" flexDir="column" justifyContent="center">
-        <Text as="a" variant="link">Blog</Text>
-      </Link>
-    </Flex>
+    <Flex
+      bgColor={colorMode === 'dark' ?
+        (currentPage === '/' ? getExtendedThemeColors(true).greyLight2 : getExtendedThemeColors(true).greyLight3)
+        : (currentPage === '/' ? getExtendedThemeColors().greyLight1 : THEME_COLORS.lightAccent)}
+      position="sticky" top="0" zIndex={2}
+      py={8}
+      px={4} textTransform="uppercase" fontSize="xl"
+      height="60px"
+      alignContent="center"
+      justifyContent={"space-between"}
+    >
+      <Flex justifyContent={"center"} alignItems="center" mr={4}>
+        <Link href='/' display={["none", "block"]} width="50px" height="50px">
+          <LogoIcon boxSize="50px" fill={colorMode === 'dark' ? getExtendedThemeColors().primary : THEME_COLORS.dark} />
+        </Link>
+        {links.map(link => (
+          <Flex mx={4} alignItems="center" justifyContent={"center"}>
+            <Link href={link.url} variant="ghost"><Text as="a" fontWeight={
+              currentPage === link.url ? 'bold' : 'normal'
+            } display="flex" flexDir="column" justifyContent="center"
+            >{link.name}</Text></Link>
+          </Flex>
+        ))}
+      </Flex>
+
+      <Flex mx={4} alignItems="center" justifyContent={"center"} >
+        <IconButton _focus={{
+          boxShadow: `inset .2rem .2rem .5rem ${getExtendedThemeColors(colorMode === 'dark').greyLight1}, inset -.2rem -.2rem .5rem #fff`
+        }} _active={{
+          boxShadow: `inset .2rem .2rem .5rem ${getExtendedThemeColors(colorMode === 'dark').greyLight1}, inset -.2rem -.2rem .5rem #fff`
+        }} aria-label='Toggle dark mode' className="card-inner" onClick={toggleColorMode} icon={<Icon as={colorMode === 'dark' ? BsFillMoonStarsFill : BsFillSunFill} />} />
+      </Flex>
+    </Flex >
   )
 }
+
+const links = [
+  {
+    name: 'About',
+    url: '/',
+  },
+  {
+    name: 'Projects',
+    url: '/projects',
+  },
+  {
+    name: 'Blog',
+    url: '/blog',
+  }
+]

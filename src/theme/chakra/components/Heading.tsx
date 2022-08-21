@@ -4,12 +4,13 @@ const config = {
   },
   variants: {
     default: {
-      fontFamily: "'Open Sans', sans-serif",
+      fontFamily: "'Poppins', sans-serif;",
+      fontWeight: 600,
     },
     subtitle: {
       fontFamily: "'Quicksand', sans-serif",
       fontWeight: 300,
-      fontSize: "30px",
+      fontSize: "20px",
     }
   },
   defaultProps: {

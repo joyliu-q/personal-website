@@ -5,8 +5,8 @@ import { BlogPageContainer } from "./BlogPageContainer"
 import './style.css';
 
 export const BlogPage = (
-  {title, subtitle, date, path}: 
-  {title: string, subtitle?: string, date: string, path: string}
+  { title, subtitle, date, path }:
+    { title: string, subtitle?: string, date: string, path: string }
 ) => {
   const [md, setMd] = React.useState("");
 
@@ -30,11 +30,11 @@ export const BlogPage = (
   })
   return (
     <BlogPageContainer>
-      <Heading as="h1" fontSize="6xl">{title}</Heading>
+      <Heading as="h1" fontSize="5xl">{title}</Heading>
       <Heading variant="subtitle" fontWeight={300}>{subtitle}</Heading>
       <Text>{date}</Text>
-      <Box p={2}/>
-      <ReactMarkdown className="blog" children={md} skipHtml/>
+      <Box p={2} />
+      <ReactMarkdown className="blog" children={md} skipHtml />
     </BlogPageContainer>
   )
 }
