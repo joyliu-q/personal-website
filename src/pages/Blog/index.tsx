@@ -1,4 +1,4 @@
-import { Heading, Flex, Container, Text, Link, VStack, useColorMode } from '@chakra-ui/react'
+import { Heading, Flex, Container, Text, Link, VStack, useColorMode, Image } from '@chakra-ui/react'
 import NavBar from '../../components/NavBar'
 import { getExtendedThemeColors } from '../../utils';
 import { BLOGS } from './entries';
@@ -23,7 +23,7 @@ export const Blog = (_props: any) => {
               </Flex>
             </Flex>
           </Flex>
-          <Container my={4} maxW="container.lg" className="card" p={4} minH="calc(100vh - 60px)" borderRadius={4}>
+          <Container my={4} maxW="container.lg" className="card" p={4} borderRadius={4}>
             <VStack p={4} className="card-inner" alignItems="start" spacing={8}>
               {Object.entries(BLOGS).map(([key, value]) => {
                 return (
@@ -41,6 +41,9 @@ export const Blog = (_props: any) => {
                 )
               })}
             </VStack>
+            <Flex justifyContent={"center"} width="100%" p={4}>
+              <Image boxSize={"400px"} src={`/assets/joy.svg`} />
+            </Flex>
           </Container>
         </Container>
       </Flex >
