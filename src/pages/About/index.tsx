@@ -23,10 +23,10 @@ export const About = (_props: any) => {
           </Text>
           <Box p={2} />
           <Text>
-            Currently, I am an incoming STEP intern at Google, as well as a DevOps engineer
-            at <Link variant="ghost" href="https://pennlabs.org/" isExternal>Penn Labs</Link> and Head of Logistics
+            Currently, I am the Platform Lead and DevOps engineer
+            at <Link variant="ghost" href="https://pennlabs.org/" isExternal>Penn Labs</Link> and Co-Director
             at <Link variant="ghost" href="https://pennapps.com/" isExternal>PennApps</Link>.
-            In the past, I was a <Link variant="ghost" href="https://summerofcode.withgoogle.com/">GSoC</Link> contributer for <Link variant="ghost" href="https://www.cncf.io/" isExternal>CNCF</Link> <Link href="https://in-toto.io/" variant="ghost" isExternal>in-toto</Link>. Outside of work, I love drawing, hiking, and hackathons!
+            In the past, I interned at Google (YouTube), was a <Link variant="ghost" href="https://summerofcode.withgoogle.com/">GSoC</Link> contributer for <Link variant="ghost" href="https://www.cncf.io/" isExternal>CNCF</Link> <Link href="https://in-toto.io/" variant="ghost" isExternal>in-toto</Link>, as well as interned at <Link variant="ghost" href="https://schoolhouse.world/">Schoolhouse.world</Link>. Outside of work, I love drawing, hiking, and hackathons!
           </Text>
           <Box p={2} />
           <Text>
