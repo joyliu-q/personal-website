@@ -40,7 +40,7 @@ export const About = (_props: any) => {
         <Flex px={4} borderRadius={4} flexDir="column" width="1000px" justifyContent={"center"} alignItems="center" >
           <Flex as="a" href="/projects" className="card btn btn__secondary" p={4} my={4} mb={6} width="100%" textAlign="center" justifyContent={"center"}>
             <Heading size="lg">
-              Recent Projects
+              Most Recent Projects
             </Heading>
           </Flex>
           <ProjectCarousel />

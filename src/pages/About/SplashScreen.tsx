@@ -42,7 +42,9 @@ export const SplashScreen = () => {
             onMouseLeave={() => {
               setShowMe(!showMe);
             }}
-            src={showMe ? "assets/pic.png" : "assets/pfp.png"} boxSize='250px' p={4}
+            src={showMe ? "assets/pic.png" : "assets/pfp.png"}
+            boxSize='250px'
+            p={4}
           />
           <Flex flexDir="column" justifyContent="center" alignContent="center">
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>

@@ -9,7 +9,7 @@ import { ProjectCard, ProjectRow } from "./ProjectCard"
 export default () => {
   return (
     <VStack spacing={8}>
-      {PROJECT_LIST.map(project =>
+      {PROJECT_LIST.reverse().map(project =>
         <>
           <Flex display={['none', 'inherit']}>
             <ProjectRow project={project} />
