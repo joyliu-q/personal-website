@@ -42,7 +42,7 @@ export const SplashScreen = () => {
             onMouseLeave={() => {
               setShowMe(!showMe);
             }}
-            src={showMe ? "assets/pic.png" : "assets/pfp.png"}
+            src={showMe ? "assets/pic_new.png" : "assets/pfp.png"}
             boxSize='250px'
             p={4}
           />
@@ -51,7 +51,7 @@ export const SplashScreen = () => {
               Qijia “Joy” Liu
             </Heading>
             <Heading as="h3" size="md" fontWeight="normal" textAlign={['center', 'left']}>
-              Developer • creator • Learner
+              Developer • Creator • Student
             </Heading>
             <Box p={2} />
             <ContactIcons animate />
