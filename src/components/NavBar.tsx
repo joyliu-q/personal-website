@@ -55,5 +55,9 @@ const links = [
   {
     name: 'Blog',
     url: '/blog',
-  }
+  },
+  {
+    name: 'Draw Constellations',
+    url: 'https://joyliu-q.github.io/constellations/',
+  },
 ]
