@@ -6,7 +6,13 @@ interface BlogEntry {
   isExternal?: boolean;
 }
 
-export const BLOGS: { [key: string]: BlogEntry }= {
+export const BLOGS: { [key: string]: BlogEntry } = {
+  "typography": {
+    title: "Brief Dive into Typography",
+    subtitle: "Fonts, squares, and opinions",
+    date: "2024-02-25",
+    path: "2024-02-25.md",
+  },
   "make-website-two-hours": {
     title: "Making a personal website in 2 hours (and what I learned)",
     subtitle: "The art of getting backburner projects done",
