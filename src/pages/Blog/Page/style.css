@@ -62,7 +62,7 @@
 .blog blockquote { 
   border-left: #ddd solid 4px !important;
   padding: 10px !important; 
-  background: #eee !important; 
+  background: rgba(2, 0, 6, 0.05) !important;
   margin-top: 10px !important; 
   margin-bottom: 10px !important; 
 }
