@@ -9,7 +9,7 @@ export const About = (_props: any) => {
   const { colorMode } = useColorMode()
 
   return (
-    <Flex flexDir="column" bgColor={colorMode == 'dark' ? getExtendedThemeColors(true).greyLight3 : THEME_COLORS.lightAccent} minH="100vh">
+    <Flex flexDir="column" bgColor={colorMode === 'dark' ? getExtendedThemeColors(true).greyLight3 : THEME_COLORS.lightAccent} minH="100vh">
       <NavBar currentPage='/' />
       <SplashScreen />
       <Flex bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1} className="block" mb={10}>

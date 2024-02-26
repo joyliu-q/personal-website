@@ -8,7 +8,7 @@ export const Projects = (_props: any) => {
 
   return (
     // TODO: border controlled by this line
-    <Flex flexDir="column" minH="100vh" bgColor={getExtendedThemeColors(colorMode == 'dark').greyLight1}>
+    <Flex flexDir="column" minH="100vh" bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1}>
       <NavBar currentPage={"/projects"} />
       <Container maxW="container.xl" minH="calc(100vh - 60px)" className='container-bg' flexDir="column">
         <Flex alignContent="center" justifyContent="center" p={4}>

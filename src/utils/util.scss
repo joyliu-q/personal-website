@@ -12,14 +12,13 @@
 
 .dark {
   --primary-light: #331D42;
-  --primary: #b96aff;
-  --primary-dark: #5b0eeb;
+  --primary: #885eae;
+  --primary-dark: #542f9a;
   
-  --white: #2A2A2A;
   --greyLight-1: #333333;
-  --greyLight-2: #331D42;
-  --greyLight-3: #291E30;
-  --greyDark: #EEDDFE;
+  --greyLight-2: #1f1e20;
+  --greyLight-3: #1a161d;
+  --greyDark: #1d1923;
 }
 
 :root[data-theme='dark'] {

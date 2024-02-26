@@ -12,8 +12,8 @@ export const Blog = (_props: any) => {
   return (
     <Flex flexDir="column" className='container-bg' minH="100vh">
       <NavBar currentPage='/blog' />
-      <Flex px={[0, 4]} flexDir="column" bgColor={getExtendedThemeColors(colorMode == 'dark').greyLight1}>
-        <Container maxW="container.xl" bgColor={getExtendedThemeColors(colorMode == 'dark').greyLight1}>
+      <Flex px={[0, 4]} flexDir="column" bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1}>
+        <Container maxW="container.xl" bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1}>
           <Flex alignContent="center" justifyContent="center" p={4}>
             <Flex maxW='container.lg' p={[4, 6]} borderRadius={4} className="card" width="100%">
               <Flex className="card-inner" p={4} width="100%">
