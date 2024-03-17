@@ -15,7 +15,7 @@ export const About = (_props: any) => {
       <Flex bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1} className="block" mb={10}>
         <Container py={10} zIndex={1} fontSize="lg">
           <Heading>
-            Hello! I'm Joy.
+            Hi! I'm Joy.
           </Heading>
           <Text>
             I'm a junior at the University of
@@ -24,7 +24,7 @@ export const About = (_props: any) => {
           <Box p={2} />
           <Text>
             Check out my <Link href='https://github.com/joyliu-q' isExternal variant="ghost">Github</Link>,
-            add me on <Link href='https://www.linkedin.com/in/qijia-joy-liu/' isExternal variant="ghost">LinkedIn</Link>, or
+            add me on <Link href='https://www.linkedin.com/in/qijia-joy-liu/' isExternal variant="ghost">LinkedIn</Link>, xor
             follow me on <Link href='https://twitter.com/qjoyliu' isExternal variant="ghost">Twitter</Link> to learn more about me and my work.
           </Text>
         </Container>

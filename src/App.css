@@ -109,3 +109,38 @@
 *:focus {
   box-shadow: none !important;
 }
+
+.avatar {
+  transition: transform 0.2s;
+  animation-name: rotate;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+body {
+  animation-name: fade;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+div:hover > .avatar {
+  transform: scaleX(-2);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    filter: saturate(2) blur(5px);
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

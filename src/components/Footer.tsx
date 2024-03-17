@@ -11,7 +11,7 @@ export default () => {
       <ContactIcons size='25px' />
       <Box p={0.5} />
       <Text fontWeight="bold">
-        Made by Joy :D
+        Made by Joy and <a href="https://julianweng.com">Julian Weng</a>, with help from Anthony Li :D
       </Text>
     </Flex>
   )
