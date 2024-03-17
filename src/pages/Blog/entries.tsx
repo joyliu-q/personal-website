@@ -25,5 +25,11 @@ export const BLOGS: { [key: string]: BlogEntry } = {
     path: "https://coda.io/@joy/2021-gsoc-story",
     subtitle: "My Google Summer of Code Experience",
     isExternal: true,
+  },
+  childrenConversational: {
+    title: "Children Conversational Training Data for Machine Learning",
+    subtitle: "Education / Technology",
+    date: "2021-07-13",
+    path: "2021-07-13.md"
   }
 }
