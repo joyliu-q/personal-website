@@ -31,14 +31,16 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
 
 export const ProjectCard = ({ isDark = false, project }: { isDark?: boolean, project: Project }) => {
   return (
-    <Flex className="card" borderRadius={4} maxWidth="500px">
+    <Flex className="card" borderRadius={4} maxWidth="600px" maxHeight="500px">
       <VStack flexGrow={2} className="card-inner" m={[2, 4]} borderRadius={4}>
         <Flex overflow="clip" flexGrow={1} bg={project.image} bgSize="cover" backdropFilter="blur(8px)" className="card-inner" width="100%" borderRadius={4} justifyContent="center" alignItems="center">
           <Image flexGrow={1} src={project.image} filter="none" />
         </Flex>
-        <Flex p={[4, 8]} flexDir="column">
+        <Flex px={[4, 6]} pb={[4, 6]} flexDir="column">
           <Flex flexDir={['column', 'row']} justifyContent={"space-between"} width="100%" maxHeight="100px">
-            <Heading as="a" href={project.link}>{project.title}</Heading>
+            <Flex>
+              {project.title}
+            </Flex>
             <HStack>
               {project.link && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.link} isExternal>
                 <LinkIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).greyDark} _hover={{ color: getExtendedThemeColors(isDark).primary }} />
@@ -48,9 +50,7 @@ export const ProjectCard = ({ isDark = false, project }: { isDark?: boolean, pro
               </Link>}
             </HStack>
           </Flex>
-          <Flex>
-            {project.description}
-          </Flex>
+          <Heading as="a" href={project.link} fontSize="2xl">{project.short}</Heading>
         </Flex>
       </VStack>
     </Flex >

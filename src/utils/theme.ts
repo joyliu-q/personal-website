@@ -2,7 +2,7 @@ export const THEME_COLORS = {
   dark: "#333333",
   light: "#FFFFFF",
   darkAccent: "#741D7B",
-  lightAccent: "#EEDDFF",
+  lightAccent: "#A8E0ED",
 }
 
 export const getExtendedThemeColors = (isDark = false) => {

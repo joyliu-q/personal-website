@@ -1,7 +1,7 @@
 import { Container, Heading, Flex, Image, Center, Box, Link, useColorMode } from '@chakra-ui/react'
 import React from 'react';
 import { GithubIcon, LinkedInIcon, THEME_COLORS, TwitterIcon } from '../../utils';
-
+import "./style.css";
 
 export const ContactIcons = ({ size = "50px", animate = false, }: { size?: string, animate?: boolean }) => {
   const { colorMode } = useColorMode()
@@ -47,7 +47,10 @@ export const SplashScreen = () => {
             p={4}
           />
           <Flex flexDir="column" justifyContent="center" alignContent="center">
-            <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
+            <Heading
+              textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}
+              className={colorMode === 'dark' ? "gradient-text-light" : "gradient-text"}
+            >
               Qijia “Joy” Liu
             </Heading>
             <Heading as="h3" size="md" fontWeight="normal" textAlign={['center', 'left']}>

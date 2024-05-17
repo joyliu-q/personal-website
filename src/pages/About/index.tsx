@@ -1,9 +1,10 @@
 import { Container, Flex, Text, Link, Box, Heading, useColorMode } from '@chakra-ui/react'
 import NavBar from '../../components/NavBar'
 import { THEME_COLORS, getExtendedThemeColors } from '../../utils';
-// import ProjectCarousel from '../Projects/ProjectCarousel';
+import ProjectCarousel from '../Projects/ProjectCarousel';
 // import { ProjectPreview } from '../../components/Project/Preview';
 import { SplashScreen } from './SplashScreen';
+// import Sidebar from '../../components/Sidebar';
 
 export const About = (_props: any) => {
   const { colorMode } = useColorMode()
@@ -12,6 +13,7 @@ export const About = (_props: any) => {
     <Flex flexDir="column" bgColor={colorMode === 'dark' ? getExtendedThemeColors(true).greyLight3 : THEME_COLORS.lightAccent} minH="100vh">
       <NavBar currentPage='/' />
       <SplashScreen />
+      {/* <Sidebar setCurrentTab={() => { }} currentTab=''/> */}
       <Flex bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1} className="block" mb={10}>
         <Container py={10} zIndex={1} fontSize="lg">
           <Heading>
@@ -36,7 +38,7 @@ export const About = (_props: any) => {
               Past Projects
             </Heading>
           </Flex>
-          {/* <ProjectCarousel /> */}
+          <ProjectCarousel />
         </Flex>
       </Flex>
     </Flex>
