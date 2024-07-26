@@ -22,7 +22,7 @@ export const Projects = (_props: any) => {
         </Flex>
         <Flex alignContent="center" my={4} width="100%">
           <Container maxW='container.lg' p={0}>
-            <ProjectList />
+            <ProjectList isDark={colorMode === 'dark'} />
           </Container>
         </Flex>
       </Container>

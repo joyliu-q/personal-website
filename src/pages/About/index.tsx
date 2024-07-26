@@ -1,7 +1,7 @@
 import { Container, Flex, Text, Link, Box, Heading, useColorMode } from '@chakra-ui/react'
 import NavBar from '../../components/NavBar'
 import { THEME_COLORS, getExtendedThemeColors } from '../../utils';
-// import ProjectCarousel from '../Projects/ProjectCarousel';
+import ProjectCarousel from '../Projects/ProjectCarousel';
 // import { ProjectPreview } from '../../components/Project/Preview';
 import { SplashScreen } from './SplashScreen';
 
@@ -18,7 +18,7 @@ export const About = (_props: any) => {
             Hello! I'm Joy.
           </Heading>
           <Text>
-            I'm a junior at the University of
+            I'm a senior at the University of
             Pennsylvania’s <Link variant="ghost" href="https://fisher.wharton.upenn.edu/" isExternal>Jerome Fisher Program in Management and Technology</Link> pursuing a B.S.E. in Computer Science and B.S. in Economics from Wharton.
           </Text>
           <Box p={2} />
@@ -36,7 +36,7 @@ export const About = (_props: any) => {
               Past Projects
             </Heading>
           </Flex>
-          {/* <ProjectCarousel /> */}
+          <ProjectCarousel />
         </Flex>
       </Flex>
     </Flex>
