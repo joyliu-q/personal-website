@@ -45,13 +45,14 @@ export const SplashScreen = () => {
             src={showMe ? "assets/pic_new.png" : "assets/pfp.png"}
             boxSize='250px'
             p={4}
+            className='avatar'
           />
           <Flex flexDir="column" justifyContent="center" alignContent="center">
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
               Qijia “Joy” Liu
             </Heading>
             <Heading as="h3" size="md" fontWeight="normal" textAlign={['center', 'left']}>
-              Developer • Creator • Student
+              Developer • Creator • Platform Big Boss
             </Heading>
             <Box p={2} />
             <ContactIcons animate />
