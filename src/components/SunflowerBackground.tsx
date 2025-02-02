@@ -13,41 +13,47 @@ interface Sunflower {
 
 const AnimatedSunflowers: React.FC = () => {
   const [sunflowers, setSunflowers] = useState<Sunflower[]>([])
+  const [_frame, setFrame] = useState<number | null>(null)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setSunflowers((prevFlowers) => {
-        const updatedFlowers = prevFlowers
-          .map((flower) => ({
-            ...flower,
-            growthStage: flower.growthStage + 0.02,
-            x: flower.x + Math.sin(flower.growthStage) * 2,
-            y: flower.y + Math.cos(flower.growthStage) * 2,
-          }))
-          .filter((flower) => flower.growthStage < Math.PI * 2)
+    let listener: Parameters<typeof window.requestAnimationFrame>[0] | null = null;
+    listener = _timestamp => {
+        setSunflowers((prevFlowers) => {
+          const updatedFlowers = prevFlowers
+            .map((flower) => ({
+              ...flower,
+              growthStage: flower.growthStage + 0.01,
+              x: flower.x + Math.sin(flower.growthStage) * 0.1,
+              y: flower.y + Math.cos(flower.growthStage) * 0.1,
+            }))
+            .filter((flower) => flower.growthStage < Math.PI * 2)
+  
+          if (Math.random() < 0.01 && updatedFlowers.length < 10) {
+            updatedFlowers.push({
+              id: Date.now(),
+              x: Math.random() * 800,
+              y: Math.random() * 500,
+              size: 20 + Math.random() * 30,
+              growthStage: 0,
+              rotationSpeed: (Math.random() - 0.5) * 0.01,
+              rotation: 0,
+            })
+          }
+  
+          return updatedFlowers
+        })
 
-        if (Math.random() < 0.1 && updatedFlowers.length < 10) {
-          updatedFlowers.push({
-            id: Date.now(),
-            x: Math.random() * 800,
-            y: Math.random() * 300,
-            size: 20 + Math.random() * 30,
-            growthStage: 0,
-            rotationSpeed: (Math.random() - 0.5) * 0.1,
-            rotation: 0,
-          })
-        }
+        setFrame(window.requestAnimationFrame(listener!));
+      };
 
-        return updatedFlowers
-      })
-    }, 50)
+    const frame = window.requestAnimationFrame(listener);
 
-    return () => clearInterval(interval)
+    setFrame(frame)
   }, [])
 
   return (
-    <div className="w-full h-[300px] overflow-hidden">
-      <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <div className="w-full h-full overflow-hidden">
+      <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
         {sunflowers.map((flower) => (
           <g
             key={flower.id}
