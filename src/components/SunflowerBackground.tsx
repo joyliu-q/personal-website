@@ -11,7 +11,7 @@ interface Sunflower {
   rotation: number
 }
 
-const AnimatedSunflowers: React.FC = () => {
+const SunflowerBackground: React.FC<{isDark?: boolean}> = ({isDark = false}) => {
   const [sunflowers, setSunflowers] = useState<Sunflower[]>([])
   const [_frame, setFrame] = useState<number | null>(null)
 
@@ -70,7 +70,7 @@ const AnimatedSunflowers: React.FC = () => {
                 <path
                   key={i}
                   d={`M0,${flower.size * 0.3} C${flower.size * 0.1},${flower.size * 0.2} ${flower.size * 0.2},0 0,0 C-${flower.size * 0.2},0 -${flower.size * 0.1},${flower.size * 0.2} 0,${flower.size * 0.3}`}
-                  fill="#FFD700"
+                  fill={isDark ? "#99ccff" : "#FFD700"}
                   transform={`rotate(${i * 30})`}
                 />
               ))}
@@ -78,14 +78,14 @@ const AnimatedSunflowers: React.FC = () => {
                 <path
                   key={i}
                   d={`M0,${flower.size * 0.3} C${flower.size * 0.1},${flower.size * 0.2} ${flower.size * 0.2},0 0,0 C-${flower.size * 0.2},0 -${flower.size * 0.1},${flower.size * 0.2} 0,${flower.size * 0.3}`}
-                  fill="#FFD700"
+                  fill={isDark ? "#99ccff" : "#FFD700"}
                   transform={`rotate(${i * 30 + flower.rotation})`}
                   style={{
                     transformOrigin: "center",
                   }}
                 />
               ))}
-              <circle r={flower.size * 0.1} fill="#8B4513" />
+              <circle r={flower.size * 0.1} fill={isDark ? "#ffccff" : "#8B4513"} />
             </g>
           </g>
         ))}
@@ -94,5 +94,5 @@ const AnimatedSunflowers: React.FC = () => {
   )
 }
 
-export default AnimatedSunflowers
+export default SunflowerBackground
 

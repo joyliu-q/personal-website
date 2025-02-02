@@ -5,6 +5,7 @@ import { GithubIcon, getExtendedThemeColors } from "../../utils"
 
 
 export const ProjectRow = ({ project, isDark = false }: { project: Project, isDark?: boolean }) => {
+  
   return (
     <Flex
       flexDir="column"
@@ -32,7 +33,6 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
           p={[2, 4]}
           width="100%"
           flexDir="column"
-          
         >
           <Flex
           flexDir={['column', 'row']} justifyContent={"space-between"} width="100%" maxHeight="100px">
@@ -49,7 +49,6 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
       </VStack>
       {(project.link || project.github) &&
         <HStack borderRadius="24px" backgroundColor={getExtendedThemeColors(isDark).lightAccent
-
         } px={2} py={1} me={4}>
           {project.link && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.link} isExternal>
             <LinkIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).primary} />

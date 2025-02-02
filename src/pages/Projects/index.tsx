@@ -14,7 +14,8 @@ export const Projects = () => {
       display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh',
-      backgroundColor: colorMode === 'dark' ? '#333333' : '#f2f0f9'
+      backgroundColor: colorMode === 'dark' ? '#333333' : '#f2f0f9',
+      padding: '3rem 0'
     }}>
       <NavBar currentPage={"/projects"} />
       <div className="container" style={{

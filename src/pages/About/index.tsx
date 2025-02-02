@@ -20,7 +20,7 @@ export const About = (_props: any) => {
         zIndex="0"
         overflow="visible"
       >
-        <SunflowerBackground />
+        <SunflowerBackground isDark={colorMode === 'dark'} />
       </Box>
       <SplashScreen />
       <Flex bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1} className="block" mb={10}>
@@ -47,7 +47,7 @@ export const About = (_props: any) => {
               Past Projects
             </Heading>
           </Flex>
-          <ProjectCarousel />
+          <ProjectCarousel isDark={colorMode === 'dark'} />
         </Flex>
       </Flex>
     </Flex>

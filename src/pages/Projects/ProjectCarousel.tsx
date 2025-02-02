@@ -8,7 +8,7 @@ import { Flex, Heading } from "@chakra-ui/react";
 // TODO: standardize & move project header/button to separate component
 // TODO: create a json list for project data & populate using map
 
-export default () => {
+export default ({ isDark = false }: { isDark?: boolean }) => {
   // const [randomNumber, setRandomNumber] = useState(0);
   // useEffect(() => {
   //   setRandomNumber(Math.floor(Math.random() * PROJECT_LIST.length - 3));
@@ -19,7 +19,7 @@ export default () => {
         <div className="carousel-cards__content">
           {PROJECT_LIST.slice(1,4).map(project =>
             <div className="carousel-cards__item d-flex align-items-center justify-content-center">
-              <ProjectCard project={project} />
+              <ProjectCard project={project} isDark={isDark} />
             </div>
           )}
         </div>

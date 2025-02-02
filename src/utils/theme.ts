@@ -16,13 +16,13 @@ export const THEME_COLORS = {
 }
 
 const DARK_THEME_COLORS_EXTENDED: ThemeColors = {
-  primary: '#b96aff',
+  primary: '#994db3',
   primaryDark: '#5b0eeb',
   greyLight1: '#333333',
   greyLight2: '#1E1E1E',
   greyLight3: '#291E30',
   greyDark: '#b96aff',
-  lightAccent: "#EEDDFF",
+  lightAccent: '#291E30',
 }
 
 const THEME_COLORS_EXTENDED: ThemeColors = {
