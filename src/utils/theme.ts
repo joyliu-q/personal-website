@@ -1,3 +1,13 @@
+export interface ThemeColors {
+  primary: string;
+  primaryDark: string;
+  greyLight1: string;
+  greyLight2: string;
+  greyLight3: string;
+  greyDark: string;
+  lightAccent: string;
+}
+
 export const THEME_COLORS = {
   dark: "#333333",
   light: "#FFFFFF",
@@ -5,11 +15,7 @@ export const THEME_COLORS = {
   lightAccent: "#EEDDFF",
 }
 
-export const getExtendedThemeColors = (isDark = false) => {
-  return isDark ? DARK_THEME_COLORS_EXTENDED : THEME_COLORS_EXTENDED;
-}
-
-const DARK_THEME_COLORS_EXTENDED = {
+const DARK_THEME_COLORS_EXTENDED: ThemeColors = {
   primary: '#b96aff',
   primaryDark: '#5b0eeb',
   greyLight1: '#333333',
@@ -19,7 +25,7 @@ const DARK_THEME_COLORS_EXTENDED = {
   lightAccent: "#EEDDFF",
 }
 
-const THEME_COLORS_EXTENDED = {
+const THEME_COLORS_EXTENDED: ThemeColors = {
   primary: '#D4A5FE',
   primaryDark: '#5b0eeb',
   greyLight1: '#f2f0f9',
@@ -27,4 +33,8 @@ const THEME_COLORS_EXTENDED = {
   greyLight3: '#291E30',
   greyDark: '#9baacf',
   lightAccent: "#EEDDFF",
+}
+
+export const getExtendedThemeColors = (isDark = false): ThemeColors => {
+  return isDark ? DARK_THEME_COLORS_EXTENDED : THEME_COLORS_EXTENDED;
 }

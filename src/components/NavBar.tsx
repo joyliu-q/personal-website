@@ -2,7 +2,11 @@ import { Flex, Icon, IconButton, Link, Text, useColorMode } from '@chakra-ui/rea
 import { THEME_COLORS, getExtendedThemeColors, LogoIcon } from '../utils'
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 
-export default ({ currentPage }: { currentPage: string }) => {
+interface NavBarProps {
+  currentPage: string;
+}
+
+export const NavBar = ({ currentPage }: NavBarProps): JSX.Element => {
   const { colorMode, toggleColorMode } = useColorMode()
 
   return (
@@ -42,6 +46,8 @@ export default ({ currentPage }: { currentPage: string }) => {
     </Flex >
   )
 }
+
+export default NavBar;
 
 const links = [
   {

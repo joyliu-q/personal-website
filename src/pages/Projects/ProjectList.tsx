@@ -6,14 +6,28 @@ import { ProjectCard, ProjectRow } from "./ProjectCard"
 // TODO: standardize & move project header/button to separate component
 // TODO: create a json list for project data & populate using map
 
-export default ({isDark = false}: {isDark: boolean}) => {
+interface ProjectListProps {
+  isDark: boolean;
+  searchQuery: string;
+}
+
+export default ({ isDark = false, searchQuery = '' }: ProjectListProps) => {
+  const filteredProjects = PROJECT_LIST.filter(project => {
+    const searchLower = searchQuery.toLowerCase();
+    return (
+      project.title.toLowerCase().includes(searchLower) ||
+      (typeof project.description === 'string' && 
+        project.description.toLowerCase().includes(searchLower))
+    );
+  });
+
   return (
     <Grid templateColumns={{
       base: "repeat(1, 1fr)",
       md: "repeat(2, 1fr)",
       lg: "repeat(3, 1fr)"
     }} gap={4}>
-      {PROJECT_LIST.map(project =>
+      {filteredProjects.map(project =>
         <>
           <Flex display={['none', 'inherit']}>
             <ProjectRow project={project} isDark={isDark} />
