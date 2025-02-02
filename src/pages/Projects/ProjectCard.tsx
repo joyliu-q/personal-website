@@ -2,6 +2,7 @@ import { Flex, Heading, HStack, Image, Link, VStack } from "@chakra-ui/react"
 import { Project } from "./data"
 import { LinkIcon } from '@chakra-ui/icons'
 import { GithubIcon, getExtendedThemeColors } from "../../utils"
+import { ProjectLabelTag } from '../../components/ProjectLabel'
 
 
 export const ProjectRow = ({ project, isDark = false }: { project: Project, isDark?: boolean }) => {
@@ -41,13 +42,18 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
           } as="a" href={project.link}>{project.title}</Heading>
           
         </Flex>
-        <Flex>
+        <Flex fontSize="xs">
           {project.description}
         </Flex>
         </Flex>
         
       </VStack>
-      {(project.link || project.github) &&
+
+      <Flex flexWrap="wrap">
+        {project.labels?.map(label => (
+          <ProjectLabelTag key={label} label={label} isDark={isDark} />
+        ))}
+        {(project.link || project.github) &&
         <HStack borderRadius="24px" backgroundColor={getExtendedThemeColors(isDark).lightAccent
         } px={2} py={1} me={4}>
           {project.link && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.link} isExternal>
@@ -58,6 +64,8 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
           </Link>}
         </HStack>
       }
+      </Flex>
+      
     </Flex >
   )
 }
@@ -85,9 +93,14 @@ export const ProjectCard = ({ isDark = false, project }: { isDark?: boolean, pro
               </Link>}
             </HStack>
           </Flex>
-          <Flex>
+          <Flex fontSize="xs">
             {project.description}
           </Flex>
+        </Flex>
+        <Flex flexWrap="wrap" mt={2}>
+          {project.labels?.map(label => (
+            <ProjectLabelTag key={label} label={label} isDark={isDark} />
+          ))}
         </Flex>
       </VStack>
     </Flex >

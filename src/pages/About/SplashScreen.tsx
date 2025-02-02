@@ -60,13 +60,17 @@ export const SplashScreen = () => {
             src={showMe ? "assets/pic_new.png" : "assets/pfp.png"}
             boxSize='250px'
             p={4}
+            transition="all 0.3s ease-in-out"
+            _hover={{
+              transform: "scale(1.05)",
+            }}
           />
           <Flex flexDir="column" justifyContent="center" alignContent="center">
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
               Qijia "Joy" Liu
             </Heading>
-            <Heading as="h3" size="md" fontWeight="normal" textAlign={['center', 'left']}>
-              Developer • Creator • Student
+            <Heading as="h3" size="sm" fontWeight="normal" textAlign={['center', 'left']} maxW="400px" textTransform="none" fontStyle="italic">
+              I like to build systems, create products, and learn new things. 
             </Heading>
             <Box p={2} />
             <ContactIcons animate />

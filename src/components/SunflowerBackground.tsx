@@ -28,12 +28,12 @@ const SunflowerBackground: React.FC<{isDark?: boolean}> = ({isDark = false}) => 
             }))
             .filter((flower) => flower.growthStage < Math.PI * 2)
   
-          if (Math.random() < 0.01 && updatedFlowers.length < 10) {
+          if (Math.random() < 0.01 && updatedFlowers.length < 5) {
             updatedFlowers.push({
               id: Date.now(),
               x: Math.random() * 800,
               y: Math.random() * 500,
-              size: 20 + Math.random() * 30,
+              size: 10 + Math.random() * 30,
               growthStage: 0,
               rotationSpeed: (Math.random() - 0.5) * 0.01,
               rotation: 0,
@@ -63,7 +63,7 @@ const SunflowerBackground: React.FC<{isDark?: boolean}> = ({isDark = false}) => 
               style={{
                 transform: `scale(${Math.sin(flower.growthStage * 0.5) * 0.5 + 0.5})`,
                 transformOrigin: "center",
-                opacity: Math.sin(flower.growthStage * 0.5),
+                opacity: Math.sin(flower.growthStage * 0.5) * 0.5,
               }}
             >
               {[...Array(12)].map((_, i) => (

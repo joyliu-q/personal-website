@@ -1,8 +1,8 @@
 import { Container, Flex, Text, Link, Box, Heading, useColorMode } from '@chakra-ui/react'
 import NavBar from '../../components/NavBar'
 import { THEME_COLORS, getExtendedThemeColors } from '../../utils';
-import ProjectCarousel from '../Projects/ProjectCarousel';
-// import { ProjectPreview } from '../../components/Project/Preview';
+// import ProjectCarousel from '../Projects/ProjectCarousel';
+import { ProjectPreview } from '../../components/Project/Preview';
 import { SplashScreen } from './SplashScreen';
 import SunflowerBackground from '../../components/SunflowerBackground';
 
@@ -40,16 +40,9 @@ export const About = (_props: any) => {
           </Text>
         </Container>
       </Flex>
-      <Flex mt={10} justifyContent={"center"} alignItems="center" mb={4}>
-        <Flex px={4} borderRadius={4} flexDir="column" width="1000px" justifyContent={"center"} alignItems="center" >
-          <Flex as="a" href="/projects" className="card btn btn__secondary" p={4} my={4} mb={6} width="100%" textAlign="center" justifyContent={"center"}>
-            <Heading size="lg">
-              Past Projects
-            </Heading>
-          </Flex>
-          <ProjectCarousel isDark={colorMode === 'dark'} />
-        </Flex>
-      </Flex>
+      <Container maxW="container.lg" px={4} borderRadius={4} flexDir="column" justifyContent={"center"} alignItems="center" >
+        <ProjectPreview isDark={colorMode === 'dark'} />
+      </Container>
     </Flex>
   );
 };
