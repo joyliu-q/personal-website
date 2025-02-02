@@ -96,11 +96,11 @@ export const ProjectCard = ({ isDark = false, project }: { isDark?: boolean, pro
           <Flex fontSize="xs">
             {project.description}
           </Flex>
-        </Flex>
-        <Flex flexWrap="wrap" mt={2}>
-          {project.labels?.map(label => (
-            <ProjectLabelTag key={label} label={label} isDark={isDark} />
-          ))}
+          <Flex flexWrap="wrap" mt={2}>
+            {project.labels?.map(label => (
+              <ProjectLabelTag key={label} label={label} isDark={isDark} />
+            ))}
+          </Flex>
         </Flex>
       </VStack>
     </Flex >

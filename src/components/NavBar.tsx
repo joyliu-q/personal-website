@@ -81,6 +81,7 @@ export const NavBar = ({ currentPage }: NavBarProps): JSX.Element => {
         zIndex={999}
       >
         <IconButton 
+          backgroundColor={getExtendedThemeColors(colorMode === 'dark').greyLight1}
           _focus={{
             boxShadow: `inset .2rem .2rem .5rem ${getExtendedThemeColors(colorMode === 'dark').greyLight1}, inset -.2rem -.2rem .5rem #fff`
           }} 

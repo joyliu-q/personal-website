@@ -14,6 +14,7 @@ export const ProjectLabelTag = ({
   onClick?: () => void,
   isSelected?: boolean,
 }) => {
+  
   const colors = { 
     bg: isSelected ? getExtendedThemeColors(isDark).lightAccent : getExtendedThemeColors(isDark).greyLight1,
     color: isSelected ? getExtendedThemeColors(isDark).primary : getExtendedThemeColors(isDark).greyLight2
