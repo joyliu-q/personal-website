@@ -28,7 +28,7 @@ const SunflowerBackground: React.FC<{isDark?: boolean}> = ({isDark = false}) => 
             }))
             .filter((flower) => flower.growthStage < Math.PI * 2)
   
-          if (Math.random() < 0.01 && updatedFlowers.length < 5) {
+          if (Math.random() < 0.2 && updatedFlowers.length < 5) {
             updatedFlowers.push({
               id: Date.now(),
               x: Math.random() * 800,
