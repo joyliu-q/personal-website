@@ -32,10 +32,25 @@ export const SplashScreen = () => {
   }, [])
   return (
     <Flex flexDirection="column" flexDir="column" textTransform="uppercase" bgImage={`url(assets/splash-bg${colorMode === 'dark' ? '-dark' : ''}.svg)`} bgRepeat="no-repeat" bgSize="contain">
-      <Container display="flex" justifyContent="center" alignContent="center" maxW="container.lg" className="scene_element scene_element--fadeinup" minH="calc(100vh - 60px)" maxH="100%" centerContent zIndex={1}>
+      <Container 
+        position="relative" 
+        display="flex" 
+        justifyContent="center" 
+        alignContent="center" 
+        maxW="100%"
+        className="scene_element scene_element--fadeinup" 
+        minH="calc(100vh - 60px)" 
+        maxH="100%" 
+        centerContent 
+        zIndex={1}
+        px={0}
+      >
+        
         <Center display="flex" flexDir={['column', 'row']}>
           <Image
             rounded="50%"
+            zIndex="1"
+            position="relative"
             onMouseOver={() => {
               setShowMe(!showMe);
             }}
@@ -48,7 +63,7 @@ export const SplashScreen = () => {
           />
           <Flex flexDir="column" justifyContent="center" alignContent="center">
             <Heading textAlign={["center", "left"]} as="h1" fontSize={["3xl", "72px"]}>
-              Qijia “Joy” Liu
+              Qijia "Joy" Liu
             </Heading>
             <Heading as="h3" size="md" fontWeight="normal" textAlign={['center', 'left']}>
               Developer • Creator • Student

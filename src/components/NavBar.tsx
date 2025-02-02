@@ -14,7 +14,7 @@ export const NavBar = ({ currentPage }: NavBarProps): JSX.Element => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsCollapsed(window.scrollY > 100);
+      setIsCollapsed(window.scrollY > window.innerHeight);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

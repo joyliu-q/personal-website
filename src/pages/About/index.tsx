@@ -4,6 +4,7 @@ import { THEME_COLORS, getExtendedThemeColors } from '../../utils';
 import ProjectCarousel from '../Projects/ProjectCarousel';
 // import { ProjectPreview } from '../../components/Project/Preview';
 import { SplashScreen } from './SplashScreen';
+import SunflowerBackground from '../../components/SunflowerBackground';
 
 export const About = (_props: any) => {
   const { colorMode } = useColorMode()
@@ -11,6 +12,16 @@ export const About = (_props: any) => {
   return (
     <Flex flexDir="column" bgColor={colorMode === 'dark' ? getExtendedThemeColors(true).greyLight3 : THEME_COLORS.lightAccent} minH="100vh">
       <NavBar currentPage='/' />
+      <Box 
+        position="fixed"
+        width="100vw"
+        left="0"
+        top="0"
+        zIndex="0"
+        overflow="visible"
+      >
+        <SunflowerBackground />
+      </Box>
       <SplashScreen />
       <Flex bgColor={getExtendedThemeColors(colorMode === 'dark').greyLight1} className="block" mb={10}>
         <Container py={10} zIndex={1} fontSize="lg">
