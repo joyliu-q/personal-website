@@ -60,7 +60,7 @@ const AnimatedSunflowers: React.FC = () => {
                 opacity: Math.sin(flower.growthStage * 0.5),
               }}
             >
-              {[...Array(6)].map((_, i) => (
+              {[...Array(12)].map((_, i) => (
                 <path
                   key={i}
                   d={`M0,${flower.size * 0.3} C${flower.size * 0.1},${flower.size * 0.2} ${flower.size * 0.2},0 0,0 C-${flower.size * 0.2},0 -${flower.size * 0.1},${flower.size * 0.2} 0,${flower.size * 0.3}`}
