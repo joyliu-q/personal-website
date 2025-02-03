@@ -86,7 +86,15 @@
       "type": "runtime"
     },
     {
+      "name": "rehype-raw",
+      "type": "runtime"
+    },
+    {
       "name": "sass",
+      "type": "runtime"
+    },
+    {
+      "name": "shiki",
       "type": "runtime"
     },
     {

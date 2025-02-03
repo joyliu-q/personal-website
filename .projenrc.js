@@ -11,7 +11,9 @@ const project = new web.ReactTypeScriptProject({
     "@emotion/react@^11",
     "@emotion/styled@^11",
     'react-icons',
+    "rehype-raw",
     'sass',
+    "shiki",
   ],
   depsUpgrade: false,
 
