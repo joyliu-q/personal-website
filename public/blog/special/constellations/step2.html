@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>My P5 Sketch</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      /* Also ensure no extra horizontal scroll from the body */
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+</head>
+<body>
+  <script>
+    let PADDING = 16;
+    let time = 0;
+    let stars = [];
+
+    class Star {
+      x;
+      y;
+
+      constructor() {
+          this.x = Math.random() * (windowWidth - PADDING * 2) + PADDING;
+          this.y = Math.random() * (windowHeight - PADDING * 2) + PADDING;
+          this.radius = Math.random() * 5;
+      }
+
+      draw(c, time) {
+        let addedRadius = 5 * Math.sin(time / 10);
+
+        let shimmer = random(-0.5, 0.5);
+        noStroke();
+        for (let i = 4; i >= 0; i--) {
+          let alpha = map(i, 0, 4, 10, 50);
+          fill(255, 228, 94, alpha);
+          let glowRadius = (this.radius + addedRadius) * (2.5 - i * 0.4) + shimmer;
+          ellipse(this.x, this.y, glowRadius, glowRadius);
+        }
+        fill(255, 228, 94); // solid yellow
+        ellipse(this.x, this.y, this.radius + addedRadius + shimmer, this.radius + addedRadius + shimmer);
+      }
+    }
+
+    function setup() {
+      stars = Array.from({ length: 10 }, () => new Star());
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+      time += 1;
+      background("#05061c");
+      stars.forEach(star => star.draw(this, time));
+    }
+  </script>
+</body>
+</html>

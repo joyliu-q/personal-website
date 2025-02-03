@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>My P5 Sketch</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      /* Also ensure no extra horizontal scroll from the body */
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+</head>
+<body>
+  <script>
+    let PADDING = 16;
+    let time = 0;
+    let starX = 0;
+    let starY = 0;
+    let radius = 10;
+
+    function setup() {
+      // We add padding because we don't want stars to be on the edge of the canvas
+      starX = Math.random() * (windowWidth - PADDING * 2) + PADDING;
+      starY = Math.random() * (windowHeight - PADDING * 2) + PADDING;
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function drawStar(x, y, r) {
+      let addedRadius = 5 * Math.sin(time / 10);
+      let shimmer = random(-0.5, 0.5);
+      noStroke();
+      for (let i = 4; i >= 0; i--) {
+        let alpha = map(i, 0, 4, 10, 50);
+        fill(255, 228, 94, alpha);
+        let glowRadius = (r + addedRadius) * (2.5 - i * 0.4) + shimmer;
+        ellipse(starX, starY, glowRadius, glowRadius);
+      }
+      fill(255, 228, 94); // solid yellow
+      ellipse(x, y, r + addedRadius + shimmer, r + addedRadius + shimmer);
+    }
+
+    function draw() {
+      time += 1;
+      background("#05061c"); // sky
+      drawStar(starX, starY, radius);
+    }
+  </script>
+</body>
+</html>

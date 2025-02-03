@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>My P5 Sketch</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      /* Also ensure no extra horizontal scroll from the body */
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+</head>
+<body>
+  <script>
+    let PADDING = 16;
+    let time = 0;
+    let stars = [];
+    let constellationLines = [];
+    let lastClickedStar = null;
+    let placeholderLine = null;
+
+    class Star {
+      constructor() {
+        this.x = Math.random() * (windowWidth - PADDING * 2) + PADDING;
+        this.y = Math.random() * (windowHeight - PADDING * 2) + PADDING;
+        this.radius = Math.random() * 4 + 1;
+        this.isSelected = false;
+        this.noiseOffset = Math.random() * 20;
+      }
+
+      draw(time) {
+        let addedRadius = 5 * Math.sin(time / 10 + this.noiseOffset);
+        let shimmer = random(-0.5, 0.5);
+        
+        // Draw glow effect
+        noStroke();
+        for (let i = 4; i >= 0; i--) {
+          let alpha = map(i, 0, 4, 10, this.isSelected ? 100 : 50);
+          fill(255, 228, 94, alpha);
+          let glowRadius = (this.radius + addedRadius) * (2.5 - i * 0.4) + shimmer;
+          ellipse(this.x, this.y, glowRadius, glowRadius);
+        }
+        
+        // Draw star center
+        fill(255, 228, 94);
+        ellipse(this.x, this.y, this.radius + addedRadius + shimmer, this.radius + addedRadius + shimmer);
+      }
+
+      toggle() {
+        this.isSelected = !this.isSelected;
+      }
+    }
+
+    class Line {
+      constructor(star1, star2, type = "normal") {
+        this.star1 = star1;
+        this.star2 = star2;
+        this.type = type;
+      }
+
+      getColor() {
+        switch (this.type) {
+          case "normal": return "#fffb94";
+          case "placeholder": return "#fffb94";
+          case "invalid": return "#EFC3E6";
+        }
+      }
+
+      draw() {
+        // Convert hex colors to RGB for proper alpha handling
+        let c = color(this.getColor());
+        
+        // add glow effect
+        for (let i = 0; i < 3; i++) {
+          let alpha = map(i, 0, 4, 10, 50);
+          stroke(red(c), green(c), blue(c), alpha);
+          strokeWeight(i);
+          line(this.star1.x, this.star1.y, this.star2.x, this.star2.y);
+        }
+        
+        // Draw main line
+        stroke(this.getColor());
+        strokeWeight(1);
+        line(this.star1.x, this.star1.y, this.star2.x, this.star2.y);
+      }
+    }
+
+    class Constellations {
+      constructor(width, height) {
+        this.recalculate(width, height);
+      }
+
+      recalculate(width, height) {
+        this.width = width - 100;
+        this.height = height - 150;
+        this.distanceThreshold = Constellations._calc_distance_threshold();
+        this.dotRadius = Constellations._calc_dot_radius();
+      }
+
+      // "Private" helper methods
+      static _break_points = [425, 768, 1024];
+      static _calc_dot_radius() {
+        if (windowWidth < Constellations._break_points[0]) {
+          return 20;
+        }
+        if (windowWidth < Constellations._break_points[1]) {
+          return 16;
+        }
+        if (windowWidth < Constellations._break_points[2]) {
+          return 14;
+        }
+        return 10;
+      }
+      static _calc_distance_threshold() {
+        return this._calc_dot_radius() * 2;
+      }
+
+      getDistanceThreshold() {
+        return this.distanceThreshold;
+      }
+      getDotRadius() {
+        return this.dotRadius;
+      }
+
+      getWidth() {
+        return this.width;
+      }
+
+      getHeight() {
+        return this.height;
+      }  
+    }
+
+    function setup() {
+      stars = Array.from({ length: 30 }, () => new Star());
+      createCanvas(windowWidth, windowHeight);
+    }
+
+    function draw() {
+      time += 1;
+      background("#05061c");
+      
+      stars.forEach(star => star.draw(time));
+      constellationLines.forEach(line => line.draw());
+      if (placeholderLine) {
+        placeholderLine.draw();
+      }
+    }
+
+    function mousePressed() {
+      for (let star of stars) {
+        let d = dist(mouseX, mouseY, star.x, star.y);
+        if (d < 20) {
+          if (lastClickedStar) {
+            constellationLines.push(new Line(lastClickedStar, star));
+          }
+          star.toggle();
+          lastClickedStar = star;
+          break;
+        }
+      }
+    }
+
+    function mouseDragged() {
+      if (!lastClickedStar) return;
+      
+      let mousePos = new Star();
+      mousePos.x = mouseX;
+      mousePos.y = mouseY;
+      
+      let nearStar = stars.find(star => dist(mouseX, mouseY, star.x, star.y) < 20);
+      placeholderLine = new Line(
+        lastClickedStar,
+        nearStar || mousePos,
+        nearStar ? "placeholder" : "invalid"
+      );
+    }
+
+    function mouseReleased() {
+      if (!placeholderLine) return;
+      
+      if (placeholderLine.type === "placeholder") {
+        constellationLines.push(placeholderLine);
+        placeholderLine.star2.toggle();
+        lastClickedStar = placeholderLine.star2;
+      }
+      placeholderLine = null;
+    }
+  </script>
+</body>
+</html>
