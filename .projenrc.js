@@ -2,6 +2,7 @@ const { web } = require("projen");
 const project = new web.ReactTypeScriptProject({
   defaultReleaseBranch: "main",
   name: "personal-website",
+  nodeVersion: "20",
   deps: [
     "react-router-dom",
     "@chakra-ui/react",

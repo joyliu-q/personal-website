@@ -19,7 +19,7 @@
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "*",
     "@types/jest": "^27.5.1",
-    "@types/node": "^14",
+    "@types/node": "^20",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "projen": "^0.56.8",
@@ -44,6 +44,9 @@
   },
   "license": "Apache-2.0",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",

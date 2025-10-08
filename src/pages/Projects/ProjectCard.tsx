@@ -39,7 +39,7 @@ export const ProjectRow = ({ project, isDark = false }: { project: Project, isDa
           flexDir={['column', 'row']} justifyContent={"space-between"} width="100%" maxHeight="100px">
           <Heading fontSize={
             project.title.length > 20 ? "xl" : "2xl"
-          } as="a" href={project.link}>{project.title}</Heading>
+          }>{project.title}</Heading>
           
         </Flex>
         <Flex fontSize="xs">
@@ -83,7 +83,7 @@ export const ProjectCard = ({ isDark = false, project }: { isDark?: boolean, pro
               fontSize={
                 project.title.length > 20 ? "l" : "xl"
               }
-              as="a" href={project.link}>{project.title}</Heading>
+            >{project.title}</Heading>
             <HStack>
               {project.link && <Link className={"scene_element scene_element--pop delay-_5s"} href={project.link} isExternal>
                 <LinkIcon boxSize={["12px", "24px"]} color={getExtendedThemeColors(isDark).greyDark} _hover={{ color: getExtendedThemeColors(isDark).primary }} />

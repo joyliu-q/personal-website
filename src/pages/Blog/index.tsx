@@ -24,7 +24,7 @@ export const Blog = (_props: any) => {
             </Flex>
           </Flex>
           <Container my={4} maxW="container.lg" className="card" p={4} borderRadius={4}>
-            <VStack p={4} className="card-inner" alignItems="start" spacing={8}>
+            <VStack p={4} className="card-inner" alignItems="start" spacing={4}>
               {Object.entries(BLOGS).map(([key, value]) => {
                 return (
                   <Flex width="100%" key={key} justifyContent="space-between" fontSize="20px">
@@ -32,7 +32,7 @@ export const Blog = (_props: any) => {
                       <Link variant="ghost" href={value.isExternal ? value.path : `/blog/${key}`}>
                         <Text fontWeight="bold"><Text as="span" fontWeight="light">{value.isExternal ? "(External) " : ""}</Text>{value.title}</Text>
                       </Link>
-                      <Text fontSize="sm">{value.subtitle}</Text>
+                      {value.subtitle && <Text fontSize="sm">{value.subtitle}</Text>}
                     </Flex>
                     <Flex display={["none", "flex"]}>
                       <Text minW="100px">{value.date}</Text>

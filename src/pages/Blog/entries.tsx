@@ -7,6 +7,11 @@ interface BlogEntry {
 }
 
 export const BLOGS: { [key: string]: BlogEntry } = {
+  "keyboard": {
+    title: "What building a mechanical keyboard taught me about building systems",
+    date: "2025-10-07",
+    path: "2025-10-07.md",
+  },
   "constellations": {
     title: "Constellations",
     subtitle: "Exploring P5 and drawing constellations in the sky :D",

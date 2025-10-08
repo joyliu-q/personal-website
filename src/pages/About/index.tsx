@@ -29,14 +29,15 @@ export const About = (_props: any) => {
             Hello! I'm Joy.
           </Heading>
           <Text>
-            I'm a senior at the University of
-            Pennsylvania’s <Link variant="ghost" href="https://fisher.wharton.upenn.edu/" isExternal>Jerome Fisher Program in Management and Technology</Link> pursuing a B.S.E. in Computer Science and B.S. in Economics from Wharton.
+            I am currently a member of technical staff at Modal Labs.
+            Before that, I went to school at the University of Pennsylvania, where I studied Computer Science and Business as part of the <Link variant="ghost" href="https://fisher.wharton.upenn.edu/" isExternal>Management and Technology</Link> dual degree program.
+            I like learning, teaching, and building systems that have a (cool) personality.
           </Text>
           <Box p={2} />
           <Text>
             Check out my <Link href='https://github.com/joyliu-q' isExternal variant="ghost">Github</Link>,
             add me on <Link href='https://www.linkedin.com/in/qijia-joy-liu/' isExternal variant="ghost">LinkedIn</Link>, or
-            follow me on <Link href='https://twitter.com/qjoyliu' isExternal variant="ghost">Twitter</Link> to learn more about me and my work.
+            follow me on <Link href='https://twitter.com/qjoyliu' isExternal variant="ghost">Twitter</Link>.
           </Text>
         </Container>
       </Flex>

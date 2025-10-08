@@ -46,6 +46,15 @@ export const PROJECT_LIST: Project[] = [
     labels: [ProjectLabel.TEACHING, ProjectLabel.RUST],
   },
   {
+    title: 'CIS1912 DevOps',
+    description:
+      'Taught and created curriculum from scratch for CIS 1912 DevOps, an undergraduate course at Penn.',
+    image: '/projects/cis1912.png',
+    github: 'https://github.com/cis1912',
+    link: "https://www.cis1912.org/fa24/",
+    labels: [ProjectLabel.TEACHING, ProjectLabel.SYSTEMS],
+  },
+  {
     title: 'Kepler',
     description:
       'enter your git multiverse (a multi-award winning project at hackprinceton)',
